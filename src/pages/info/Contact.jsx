@@ -1,0 +1,3 @@
+export default function Contact() {
+  return <div className="container page"><div className="form"><span className="eyebrow">Contact Us</span><h1>Let's connect.</h1><div className="field"><label>Name</label><input /></div><div className="field"><label>Email</label><input type="email" /></div><div className="field"><label>Message</label><textarea rows="6" /></div><button className="button primary">Send Message</button><div className="card card-body"><h3>Location / Map</h3><div className="media-placeholder">MAP PLACEHOLDER</div></div></div></div>;
+}

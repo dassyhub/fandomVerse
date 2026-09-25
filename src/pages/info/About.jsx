@@ -1,0 +1,3 @@
+export default function About() {
+  return <div className="container page"><span className="eyebrow">About FandomVerse</span><h1>One portal for the fandom world.</h1><p>FandomVerse brings discovery across anime, gaming, movies, TV shows, K-Pop, comics and manga into one visually rich experience.</p><div className="section grid grid-3"><div className="card card-body"><h2>Discover</h2><p>Find content across fandoms.</p></div><div className="card card-body"><h2>Explore</h2><p>Characters, media, events and releases.</p></div><div className="card card-body"><h2>Collect</h2><p>Bookmarks, notes and fandom finds.</p></div></div></div>;
+}

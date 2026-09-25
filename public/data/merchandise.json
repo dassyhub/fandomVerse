@@ -1,0 +1,114 @@
+[
+  {
+    "id": "anime-merch-1",
+    "name": "Nightfall Reapers Logo Hoodie",
+    "category": "anime",
+    "franchise": "Nightfall Reapers",
+    "price": 15500,
+    "description": "Officially inspired logo hoodie for Nightfall Reapers fans."
+  },
+  {
+    "id": "anime-merch-2",
+    "name": "Nightfall Reapers Collector's Pin Set",
+    "category": "anime",
+    "franchise": "Nightfall Reapers",
+    "price": 4200,
+    "description": "Officially inspired collector's pin set for Nightfall Reapers fans."
+  },
+  {
+    "id": "gaming-merch-1",
+    "name": "Starforge Online Logo Hoodie",
+    "category": "gaming",
+    "franchise": "Starforge Online",
+    "price": 15500,
+    "description": "Officially inspired logo hoodie for Starforge Online fans."
+  },
+  {
+    "id": "gaming-merch-2",
+    "name": "Starforge Online Collector's Pin Set",
+    "category": "gaming",
+    "franchise": "Starforge Online",
+    "price": 4200,
+    "description": "Officially inspired collector's pin set for Starforge Online fans."
+  },
+  {
+    "id": "movies-merch-1",
+    "name": "The Last Horizon Logo Hoodie",
+    "category": "movies",
+    "franchise": "The Last Horizon",
+    "price": 15500,
+    "description": "Officially inspired logo hoodie for The Last Horizon fans."
+  },
+  {
+    "id": "movies-merch-2",
+    "name": "The Last Horizon Collector's Pin Set",
+    "category": "movies",
+    "franchise": "The Last Horizon",
+    "price": 4200,
+    "description": "Officially inspired collector's pin set for The Last Horizon fans."
+  },
+  {
+    "id": "tvshows-merch-1",
+    "name": "Static City Logo Hoodie",
+    "category": "tvshows",
+    "franchise": "Static City",
+    "price": 15500,
+    "description": "Officially inspired logo hoodie for Static City fans."
+  },
+  {
+    "id": "tvshows-merch-2",
+    "name": "Static City Collector's Pin Set",
+    "category": "tvshows",
+    "franchise": "Static City",
+    "price": 4200,
+    "description": "Officially inspired collector's pin set for Static City fans."
+  },
+  {
+    "id": "kpop-merch-1",
+    "name": "LUNARIS Logo Hoodie",
+    "category": "kpop",
+    "franchise": "LUNARIS",
+    "price": 15500,
+    "description": "Officially inspired logo hoodie for LUNARIS fans."
+  },
+  {
+    "id": "kpop-merch-2",
+    "name": "LUNARIS Collector's Pin Set",
+    "category": "kpop",
+    "franchise": "LUNARIS",
+    "price": 4200,
+    "description": "Officially inspired collector's pin set for LUNARIS fans."
+  },
+  {
+    "id": "comics-merch-1",
+    "name": "Ironclad Legion Logo Hoodie",
+    "category": "comics",
+    "franchise": "Ironclad Legion",
+    "price": 15500,
+    "description": "Officially inspired logo hoodie for Ironclad Legion fans."
+  },
+  {
+    "id": "comics-merch-2",
+    "name": "Ironclad Legion Collector's Pin Set",
+    "category": "comics",
+    "franchise": "Ironclad Legion",
+    "price": 4200,
+    "description": "Officially inspired collector's pin set for Ironclad Legion fans."
+  },
+  {
+    "id": "manga-merch-1",
+    "name": "Ashen Blade Logo Hoodie",
+    "category": "manga",
+    "franchise": "Ashen Blade",
+    "price": 15500,
+    "description": "Officially inspired logo hoodie for Ashen Blade fans."
+  },
+  {
+    "id": "manga-merch-2",
+    "name": "Ashen Blade Collector's Pin Set",
+    "category": "manga",
+    "franchise": "Ashen Blade",
+    "price": 4200,
+    "description": "Officially inspired collector's pin set for Ashen Blade fans."
+  }
+]

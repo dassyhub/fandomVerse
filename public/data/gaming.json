@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gaming-content-1",
+    "title": "The Rise of Starforge Online: A Global Phenomenon",
+    "type": "ARTICLE",
+    "category": "gaming",
+    "description": "How Starforge Online became one of the most talked-about fandoms this year.",
+    "meta": "6 min read"
+  },
+  {
+    "id": "gaming-content-2",
+    "title": "Starforge Online: Behind the Scenes",
+    "type": "VIDEO",
+    "category": "gaming",
+    "description": "An inside look at how the world of Starforge Online was built.",
+    "meta": "8:24"
+  },
+  {
+    "id": "gaming-content-3",
+    "title": "Starforge Online \u2014 Official Trailer",
+    "type": "TRAILER",
+    "category": "gaming",
+    "description": "The latest teaser for the next chapter of Starforge Online.",
+    "meta": "Upcoming"
+  },
+  {
+    "id": "gaming-content-4",
+    "title": "Starforge Online Fan Art Gallery",
+    "type": "GALLERY",
+    "category": "gaming",
+    "description": "A curated collection of fan-made art inspired by Starforge Online.",
+    "meta": "48 photos"
+  },
+  {
+    "id": "gaming-content-5",
+    "title": "Starforge Online: The Soundtrack Breakdown",
+    "type": "AUDIO",
+    "category": "gaming",
+    "description": "A fan podcast digging into the music of Starforge Online.",
+    "meta": "34 min"
+  }
+]

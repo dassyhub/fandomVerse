@@ -1,0 +1,3 @@
+export default function Bookmarks() {
+  return <div className="container page"><span className="eyebrow">My Collection</span><h1>Bookmarks</h1><div className="filters"><button className="button primary">All</button><button className="button ghost">Articles</button><button className="button ghost">Characters</button><button className="button ghost">Events</button><button className="button ghost">Media</button></div><div className="empty"><h3>No bookmarks yet</h3><p>Save characters, articles, events and media as you explore FandomVerse.</p></div></div>;
+}

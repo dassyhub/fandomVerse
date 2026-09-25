@@ -1,0 +1,422 @@
+[
+  {
+    "id": "anime-kaida",
+    "name": "Kaida",
+    "category": "anime",
+    "series": "Nightfall Reapers",
+    "bio": "Kaida is one of the central figures of Nightfall Reapers, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Fearless",
+      "Strategic Mind",
+      "Loyal"
+    ]
+  },
+  {
+    "id": "anime-rho",
+    "name": "Rho",
+    "category": "anime",
+    "series": "Nightfall Reapers",
+    "bio": "Rho is one of the central figures of Nightfall Reapers, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Strategic Mind",
+      "Loyal",
+      "Quick-Witted"
+    ]
+  },
+  {
+    "id": "anime-selin",
+    "name": "Selin",
+    "category": "anime",
+    "series": "Nightfall Reapers",
+    "bio": "Selin is one of the central figures of Nightfall Reapers, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Loyal",
+      "Quick-Witted",
+      "Mysterious"
+    ]
+  },
+  {
+    "id": "anime-vantos",
+    "name": "Vantos",
+    "category": "anime",
+    "series": "Nightfall Reapers",
+    "bio": "Vantos is one of the central figures of Nightfall Reapers, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Quick-Witted",
+      "Mysterious",
+      "Compassionate"
+    ]
+  },
+  {
+    "id": "anime-mira",
+    "name": "Mira",
+    "category": "anime",
+    "series": "Nightfall Reapers",
+    "bio": "Mira is one of the central figures of Nightfall Reapers, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Mysterious",
+      "Compassionate",
+      "Hot-Headed"
+    ]
+  },
+  {
+    "id": "gaming-draven",
+    "name": "Draven",
+    "category": "gaming",
+    "series": "Starforge Online",
+    "bio": "Draven is one of the central figures of Starforge Online, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Compassionate",
+      "Hot-Headed",
+      "Calm Under Pressure"
+    ]
+  },
+  {
+    "id": "gaming-yuna",
+    "name": "Yuna",
+    "category": "gaming",
+    "series": "Starforge Online",
+    "bio": "Yuna is one of the central figures of Starforge Online, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Hot-Headed",
+      "Calm Under Pressure",
+      "Gifted Inventor"
+    ]
+  },
+  {
+    "id": "gaming-ashra",
+    "name": "Ashra",
+    "category": "gaming",
+    "series": "Starforge Online",
+    "bio": "Ashra is one of the central figures of Starforge Online, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Calm Under Pressure",
+      "Gifted Inventor",
+      "Silver Tongue"
+    ]
+  },
+  {
+    "id": "gaming-toma",
+    "name": "Toma",
+    "category": "gaming",
+    "series": "Starforge Online",
+    "bio": "Toma is one of the central figures of Starforge Online, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Gifted Inventor",
+      "Silver Tongue",
+      "Master Tactician"
+    ]
+  },
+  {
+    "id": "gaming-nyla",
+    "name": "Nyla",
+    "category": "gaming",
+    "series": "Starforge Online",
+    "bio": "Nyla is one of the central figures of Starforge Online, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Silver Tongue",
+      "Master Tactician",
+      "Fierce Protector"
+    ]
+  },
+  {
+    "id": "movies-erevan",
+    "name": "Erevan",
+    "category": "movies",
+    "series": "The Last Horizon",
+    "bio": "Erevan is one of the central figures of The Last Horizon, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Master Tactician",
+      "Fierce Protector",
+      "Wandering Spirit"
+    ]
+  },
+  {
+    "id": "movies-sable",
+    "name": "Sable",
+    "category": "movies",
+    "series": "The Last Horizon",
+    "bio": "Sable is one of the central figures of The Last Horizon, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Fierce Protector",
+      "Wandering Spirit",
+      "Sharp Instincts"
+    ]
+  },
+  {
+    "id": "movies-junho",
+    "name": "Junho",
+    "category": "movies",
+    "series": "The Last Horizon",
+    "bio": "Junho is one of the central figures of The Last Horizon, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Wandering Spirit",
+      "Sharp Instincts",
+      "Unshakeable Resolve"
+    ]
+  },
+  {
+    "id": "movies-kestra",
+    "name": "Kestra",
+    "category": "movies",
+    "series": "The Last Horizon",
+    "bio": "Kestra is one of the central figures of The Last Horizon, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Sharp Instincts",
+      "Unshakeable Resolve",
+      "Fearless"
+    ]
+  },
+  {
+    "id": "movies-ilo",
+    "name": "Ilo",
+    "category": "movies",
+    "series": "The Last Horizon",
+    "bio": "Ilo is one of the central figures of The Last Horizon, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Unshakeable Resolve",
+      "Fearless",
+      "Strategic Mind"
+    ]
+  },
+  {
+    "id": "tvshows-amara",
+    "name": "Amara",
+    "category": "tvshows",
+    "series": "Static City",
+    "bio": "Amara is one of the central figures of Static City, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Fearless",
+      "Strategic Mind",
+      "Loyal"
+    ]
+  },
+  {
+    "id": "tvshows-corvin",
+    "name": "Corvin",
+    "category": "tvshows",
+    "series": "Static City",
+    "bio": "Corvin is one of the central figures of Static City, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Strategic Mind",
+      "Loyal",
+      "Quick-Witted"
+    ]
+  },
+  {
+    "id": "tvshows-tessa",
+    "name": "Tessa",
+    "category": "tvshows",
+    "series": "Static City",
+    "bio": "Tessa is one of the central figures of Static City, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Loyal",
+      "Quick-Witted",
+      "Mysterious"
+    ]
+  },
+  {
+    "id": "tvshows-dahlia",
+    "name": "Dahlia",
+    "category": "tvshows",
+    "series": "Static City",
+    "bio": "Dahlia is one of the central figures of Static City, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Quick-Witted",
+      "Mysterious",
+      "Compassionate"
+    ]
+  },
+  {
+    "id": "tvshows-renji",
+    "name": "Renji",
+    "category": "tvshows",
+    "series": "Static City",
+    "bio": "Renji is one of the central figures of Static City, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Mysterious",
+      "Compassionate",
+      "Hot-Headed"
+    ]
+  },
+  {
+    "id": "kpop-solene",
+    "name": "Solene",
+    "category": "kpop",
+    "series": "LUNARIS",
+    "bio": "Solene is one of the central figures of LUNARIS, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Compassionate",
+      "Hot-Headed",
+      "Calm Under Pressure"
+    ]
+  },
+  {
+    "id": "kpop-marek",
+    "name": "Marek",
+    "category": "kpop",
+    "series": "LUNARIS",
+    "bio": "Marek is one of the central figures of LUNARIS, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Hot-Headed",
+      "Calm Under Pressure",
+      "Gifted Inventor"
+    ]
+  },
+  {
+    "id": "kpop-ivy",
+    "name": "Ivy",
+    "category": "kpop",
+    "series": "LUNARIS",
+    "bio": "Ivy is one of the central figures of LUNARIS, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Calm Under Pressure",
+      "Gifted Inventor",
+      "Silver Tongue"
+    ]
+  },
+  {
+    "id": "kpop-cassian",
+    "name": "Cassian",
+    "category": "kpop",
+    "series": "LUNARIS",
+    "bio": "Cassian is one of the central figures of LUNARIS, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Gifted Inventor",
+      "Silver Tongue",
+      "Master Tactician"
+    ]
+  },
+  {
+    "id": "kpop-noor",
+    "name": "Noor",
+    "category": "kpop",
+    "series": "LUNARIS",
+    "bio": "Noor is one of the central figures of LUNARIS, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Silver Tongue",
+      "Master Tactician",
+      "Fierce Protector"
+    ]
+  },
+  {
+    "id": "comics-atlas",
+    "name": "Atlas",
+    "category": "comics",
+    "series": "Ironclad Legion",
+    "bio": "Atlas is one of the central figures of Ironclad Legion, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Master Tactician",
+      "Fierce Protector",
+      "Wandering Spirit"
+    ]
+  },
+  {
+    "id": "comics-wren",
+    "name": "Wren",
+    "category": "comics",
+    "series": "Ironclad Legion",
+    "bio": "Wren is one of the central figures of Ironclad Legion, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Fierce Protector",
+      "Wandering Spirit",
+      "Sharp Instincts"
+    ]
+  },
+  {
+    "id": "comics-farro",
+    "name": "Farro",
+    "category": "comics",
+    "series": "Ironclad Legion",
+    "bio": "Farro is one of the central figures of Ironclad Legion, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Wandering Spirit",
+      "Sharp Instincts",
+      "Unshakeable Resolve"
+    ]
+  },
+  {
+    "id": "comics-lyric",
+    "name": "Lyric",
+    "category": "comics",
+    "series": "Ironclad Legion",
+    "bio": "Lyric is one of the central figures of Ironclad Legion, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Sharp Instincts",
+      "Unshakeable Resolve",
+      "Fearless"
+    ]
+  },
+  {
+    "id": "comics-zael",
+    "name": "Zael",
+    "category": "comics",
+    "series": "Ironclad Legion",
+    "bio": "Zael is one of the central figures of Ironclad Legion, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Unshakeable Resolve",
+      "Fearless",
+      "Strategic Mind"
+    ]
+  },
+  {
+    "id": "manga-orin",
+    "name": "Orin",
+    "category": "manga",
+    "series": "Ashen Blade",
+    "bio": "Orin is one of the central figures of Ashen Blade, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Fearless",
+      "Strategic Mind",
+      "Loyal"
+    ]
+  },
+  {
+    "id": "manga-vela",
+    "name": "Vela",
+    "category": "manga",
+    "series": "Ashen Blade",
+    "bio": "Vela is one of the central figures of Ashen Blade, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Strategic Mind",
+      "Loyal",
+      "Quick-Witted"
+    ]
+  },
+  {
+    "id": "manga-kess",
+    "name": "Kess",
+    "category": "manga",
+    "series": "Ashen Blade",
+    "bio": "Kess is one of the central figures of Ashen Blade, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Loyal",
+      "Quick-Witted",
+      "Mysterious"
+    ]
+  },
+  {
+    "id": "manga-thane",
+    "name": "Thane",
+    "category": "manga",
+    "series": "Ashen Blade",
+    "bio": "Thane is one of the central figures of Ashen Blade, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Quick-Witted",
+      "Mysterious",
+      "Compassionate"
+    ]
+  },
+  {
+    "id": "manga-imara",
+    "name": "Imara",
+    "category": "manga",
+    "series": "Ashen Blade",
+    "bio": "Imara is one of the central figures of Ashen Blade, known for a story arc that has captivated fans across the community.",
+    "traits": [
+      "Mysterious",
+      "Compassionate",
+      "Hot-Headed"
+    ]
+  }
+]

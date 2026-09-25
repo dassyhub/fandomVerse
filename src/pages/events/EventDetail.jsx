@@ -1,0 +1,3 @@
+export default function EventDetail() {
+  return <div className="container page"><span className="eyebrow">Event Detail</span><h1>Fandom Expo 2026</h1><p>July 5, 2026 · Lagos, Nigeria</p><div className="media-placeholder" style={{minHeight:280}}>EVENT VISUAL</div><section className="section"><h2>About this event</h2><p>Event description, category, location and related fandom information.</p><button className="button primary">♡ Bookmark Event</button></section></div>;
+}
