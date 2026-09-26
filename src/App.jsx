@@ -16,6 +16,7 @@ import Characters from "./pages/characters/Characters";
 import CharacterProfile from "./pages/characters/CharacterProfile";
 import Events from "./pages/events/Events";
 import EventDetail from "./pages/events/EventDetail";
+import Explore from "./pages/explore/Explore";
 import ReleaseRadar from "./pages/releases/ReleaseRadar";
 import Store from "./pages/store/Store";
 import ProductDetail from "./pages/store/ProductDetail";
@@ -48,6 +49,7 @@ export default function App() {
           <Route path="/characters/:id" element={<CharacterProfile />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:id" element={<EventDetail />} />
+          <Route path="/explore" element={<Explore/>} />
           <Route path="/releases" element={<ReleaseRadar />} />
           <Route path="/store" element={<Store />} />
           <Route path="/store/:id" element={<ProductDetail />} />

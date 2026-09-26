@@ -1,26 +1,37 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FiCompass } from "react-icons/fi";
 import Breadcrumbs from "../../components/layout/Breadcrumbs";
 import ContentCard from "../../components/cards/ContentCard";
 import CharacterCard from "../../components/cards/CharacterCard";
 import EventCard from "../../components/cards/EventCard";
 import ProductCard from "../../components/cards/ProductCard";
 import FilterPill from "../../components/ui/FilterPill";
+import { CATEGORY_ICONS } from "../../constants/categoryIcons";                 // icons/colors (not JSON-safe)
 
-const FILTERS = ["All", "Articles", "Gallery", "Videos", "Characters", "Events", "Merchandise"];
+const FILTERS = [
+  "All",
+  "Articles",
+  "Gallery",
+  "Videos",
+  "Characters",
+  "Events",
+  "Merchandise",
+];
 const SORTS = ["Newest", "A–Z", "Popular"];
 
 function typeToFilter(type) {
   if (type === "ARTICLE") return "Articles";
   if (type === "GALLERY") return "Gallery";
-  if (type === "VIDEO" || type === "TRAILER" || type === "AUDIO") return "Videos";
+  if (type === "VIDEO" || type === "TRAILER" || type === "AUDIO")
+    return "Videos";
   return "All";
 }
 
 export default function CategoryHub() {
   const { category = "anime" } = useParams();
 
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]); // now used below
   const [content, setContent] = useState([]);
   const [characters, setCharacters] = useState([]);
   const [events, setEvents] = useState([]);
@@ -45,43 +56,62 @@ export default function CategoryHub() {
       setEvents((eventData || []).filter((e) => e.category === category));
       setMerch((merchData || []).filter((m) => m.category === category));
     });
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [category]);
 
-  const meta = useMemo(
-    () => categories.find((item) => item.slug === category) || { label: category, icon: "✨" },
-    [categories, category]
-  );
+  // merge: JSON (label/desc) + constants (icon/color)
+  const meta = useMemo(() => {
+    const fromJson = categories.find((item) => item.slug === category);
+    const iconData = CATEGORY_ICONS[category] || {
+      icon: FiCompass,
+      color: "#a79bc0",
+    };
+
+    return {
+      label: fromJson?.label || category,
+      description: fromJson?.description || "",
+      icon: iconData.icon,
+      color: iconData.color,
+    };
+  }, [categories, category]);
 
   const sortFn = (a, b, key) => {
     if (sort === "A–Z") return (a[key] || "").localeCompare(b[key] || "");
-    if (sort === "Popular") return (b[key] || "").length - (a[key] || "").length;
+    if (sort === "Popular")
+      return (b[key] || "").length - (a[key] || "").length;
     return 0; // "Newest" = original/JSON order
   };
 
   const sortedContent = useMemo(
     () => [...content].sort((a, b) => sortFn(a, b, "title")),
-    [content, sort]
+    [content, sort],
   );
   const sortedCharacters = useMemo(
     () => [...characters].sort((a, b) => sortFn(a, b, "name")),
-    [characters, sort]
+    [characters, sort],
   );
   const sortedEvents = useMemo(
     () => [...events].sort((a, b) => sortFn(a, b, "title")),
-    [events, sort]
+    [events, sort],
   );
   const sortedMerch = useMemo(
     () => [...merch].sort((a, b) => sortFn(a, b, "name")),
-    [merch, sort]
+    [merch, sort],
   );
 
-  const showContent = filter === "All" || sortedContent.some((c) => typeToFilter(c.type) === filter);
+  const showContent =
+    filter === "All" ||
+    sortedContent.some((c) => typeToFilter(c.type) === filter);
   const showCharacters = filter === "All" || filter === "Characters";
   const showEvents = filter === "All" || filter === "Events";
   const showMerch = filter === "All" || filter === "Merchandise";
 
-  const visibleContent = filter === "All" ? sortedContent : sortedContent.filter((c) => typeToFilter(c.type) === filter);
+  const visibleContent =
+    filter === "All"
+      ? sortedContent
+      : sortedContent.filter((c) => typeToFilter(c.type) === filter);
 
   const totalVisible =
     (showContent ? visibleContent.length : 0) +
@@ -90,14 +120,27 @@ export default function CategoryHub() {
     (showMerch ? sortedMerch.length : 0);
 
   return (
-    <div className="mx-auto max-w-[1536px] px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
+    <div className="mx-auto max-w-384 px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
       <Breadcrumbs items={[{ label: meta.label }]} />
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="flex items-center gap-3 text-3xl font-black text-white sm:text-4xl">
-          <span>{meta.icon}</span>
-          {meta.label}
-        </h1>
+        <div>
+          <h1 className="flex items-center gap-3 text-3xl font-black text-white sm:text-4xl">
+            <span
+              className="flex h-11 w-11 items-center justify-center rounded-xl"
+              style={{ backgroundColor: `${meta.color}22`, color: meta.color }}
+            >
+              <meta.icon size={22} />
+            </span>
+            {meta.label}
+          </h1>
+          {/* renders when categories.json has loaded and matched */}
+          {meta.description && (
+            <p className="mt-2 max-w-xl text-sm text-[#a79bc0]">
+              {meta.description}
+            </p>
+          )}
+        </div>
         <div className="flex flex-wrap gap-2">
           {SORTS.map((s) => (
             <FilterPill key={s} active={sort === s} onClick={() => setSort(s)}>
@@ -107,9 +150,13 @@ export default function CategoryHub() {
         </div>
       </div>
 
-      <div className="mt-5 flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="mt-5 flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden">
         {FILTERS.map((f) => (
-          <FilterPill key={f} active={filter === f} onClick={() => setFilter(f)}>
+          <FilterPill
+            key={f}
+            active={filter === f}
+            onClick={() => setFilter(f)}
+          >
             {f}
           </FilterPill>
         ))}

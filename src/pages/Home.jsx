@@ -1,7 +1,59 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiBookmark, FiPlay, FiArrowRight } from "react-icons/fi";
+import {
+  FiBookmark,
+  FiPlay,
+  FiArrowRight,
+  FiFilm,
+  FiTv,
+  FiMic,
+  FiBookOpen,
+} from "react-icons/fi";
+import { TbMask, TbDeviceGamepad2, TbBubbleText } from "react-icons/tb";
 
+const categories = [
+  {
+    name: "Anime",
+    icon: TbMask,
+    color: "#ff3e9e",
+    path: "/category/anime",
+  },
+  {
+    name: "Gaming",
+    icon: TbDeviceGamepad2,
+    color: "#34e4ea",
+    path: "/category/gaming",
+  },
+  {
+    name: "Movies",
+    icon: FiFilm,
+    color: "#f97316",
+    path: "/category/movies",
+  },
+  {
+    name: "TV Shows",
+    icon: FiTv,
+    color: "#facc15",
+    path: "/category/tvshows",
+  },
+  {
+    name: "K-Pop",
+    icon: FiMic,
+    color: "#ec4899",
+    path: "/category/kpop",
+  },
+  {
+    name: "Comics",
+    icon: TbBubbleText,
+    color: "#22c55e",
+    path: "/category/comics",
+  },
+  {
+    name: "Manga",
+    icon: FiBookOpen,
+    color: "#9b5cff",
+    path: "/category/manga",
+  },
+];
 const trending = [
   {
     title: "Nightfall Reapers: New Arc",
@@ -26,27 +78,19 @@ const trending = [
 ];
 
 export default function Home() {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    fetch("/data/categories.json")
-      .then((response) => (response.ok ? response.json() : []))
-      .then((data) => setCategories(Array.isArray(data) ? data : []))
-      .catch(() => setCategories([]));
-  }, []);
 
   return (
     <div className="min-h-screen bg-[#090611] text-white">
       {/* ================= HERO ================= */}
 
-      <section className="relative min-h-[403px] overflow-hidden bg-gradient-to-r from-[#29102e] via-[#1d112d] to-[#111d35]">
+      <section className="relative min-h-100.75 overflow-hidden bg-linear-to-r from-[#29102e] via-[#1d112d] to-[#111d35]">
         {/* Background glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(164,48,173,0.18),transparent_60%)]" />
 
-        <div className="relative mx-auto flex min-h-[403px] max-w-[1536px] items-center px-10 lg:px-16">
-          <div className="max-w-[680px]">
+        <div className="relative mx-auto flex min-h-100.75 max-w-384 items-center px-10 lg:px-16">
+          <div className="max-w-170">
             {/* Featured label */}
-            <span className="mb-5 inline-flex rounded-full bg-gradient-to-r from-[#ff3c91] to-[#ff347e] px-4 py-1 text-[11px] font-bold tracking-wider">
+            <span className="mb-5 inline-flex rounded-full bg-linear-to-r from-[#ff3c91] to-[#ff347e] px-4 py-1 text-[11px] font-bold tracking-wider">
               FEATURED • ANIME
             </span>
 
@@ -58,7 +102,7 @@ export default function Home() {
             </h1>
 
             {/* Description */}
-            <p className="mt-5 max-w-[550px] text-[15px] leading-5 text-[#aaa0bd]">
+            <p className="mt-5 max-w-137.5 text-[15px] leading-5 text-[#aaa0bd]">
               Kaida and the last Reapers face their greatest threat yet in the
               fight to reclaim the Ember Throne.
             </p>
@@ -67,7 +111,7 @@ export default function Home() {
             <div className="mt-4 flex items-center gap-4">
               <button
                 type="button"
-                className="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff3d91] to-[#8d4fff] px-5 py-2.5 text-xs font-bold transition hover:opacity-90"
+                className="flex items-center gap-2 rounded-full bg-linear-to-r from-[#ff3d91] to-[#8d4fff] px-5 py-2.5 text-xs font-bold transition hover:opacity-90"
               >
                 <FiPlay size={14} />
                 Watch Trailer
@@ -85,11 +129,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= MAIN CONTENT ================= */}
+      
+      <main className="mx-auto max-w-384 px-6 py-10 sm:px-8 lg:px-10">
 
-      <main className="mx-auto max-w-[1536px] px-6 py-10 sm:px-8 lg:px-10">
-        {/* ================= CATEGORIES ================= */}
-
+        {/* Categories */}
         <section>
           <h2 className="mb-6 text-xs font-bold tracking-[2px] text-[#aaa0bd]">
             EXPLORE CATEGORIES
@@ -103,7 +146,7 @@ export default function Home() {
                 className="
                   group
                   flex
-                  h-[105px]
+                  h-26.25
                   flex-col
                   items-center
                   justify-center
@@ -118,9 +161,15 @@ export default function Home() {
                   hover:bg-[#1c1427]
                 "
               >
-                <span className="mb-3 text-xl transition-transform duration-200 group-hover:scale-110">
-                  {category.icon}
-                </span>
+                <div
+                  className="mb-2.5 flex h-10 w-10 items-center justify-center rounded-xl transition-transform duration-200 group-hover:scale-110"
+                  style={{
+                    backgroundColor: `${category.color}22`,
+                    color: category.color,
+                  }}
+                >
+                  <category.icon size={20} />
+                </div>
 
                 <span className="text-xs font-medium text-white">
                   {category.name}
@@ -130,8 +179,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= TRENDING ================= */}
-
+        {/* Trending */}
         <section className="mt-7">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-bold">Trending Now</h2>
@@ -165,19 +213,16 @@ export default function Home() {
                 "
               >
                 {/* Image */}
-
                 <div
-                  className={`relative aspect-[1.65/1] overflow-hidden bg-gradient-to-br ${item.gradient}`}
+                  className={`relative aspect-[1.65/1] overflow-hidden bg-linear-to-br ${item.gradient}`}
                 >
                   <div className="h-full w-full transition-transform duration-500 group-hover:scale-110 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.14),transparent_60%)]" />
 
                   {/* Image overlay */}
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                 </div>
 
                 {/* Card information */}
-
                 <div className="p-4">
                   <p className="mb-1 text-[10px] uppercase tracking-wider text-[#9b8cab]">
                     {item.category}
