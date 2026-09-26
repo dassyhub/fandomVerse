@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import MerchCard from "../../components/MerchCard";
-import Breadcrumbs from "./../../components/layout/Breadcrumbs";
 
 const CATEGORIES = [
   "all",
@@ -13,7 +12,7 @@ const CATEGORIES = [
   "manga",
 ];
 
-export default function Store() {
+export default function Merchandise() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("all");
@@ -34,10 +33,9 @@ export default function Store() {
       });
   }, []);
 
-  const filteredProducts =
-    activeCategory === "all"
-      ? products
-      : products.filter((p) => p.category === activeCategory);
+  const filteredProducts = activeCategory === "all"
+    ? products
+    : products.filter((p) => p.category === activeCategory);
 
   const inStockProducts = filteredProducts.filter((p) => p.inStock);
   const outOfStockProducts = filteredProducts.filter((p) => !p.inStock);
@@ -65,8 +63,6 @@ export default function Store() {
 
   return (
     <div className="container page">
-      <Breadcrumbs items={[{ label: "Store" }]} />
-
       <span className="eyebrow">Merchandise</span>
       <h1>Curated fandom finds.</h1>
       <div className="filters" role="group" aria-label="Category filters">
