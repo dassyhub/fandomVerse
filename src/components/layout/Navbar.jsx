@@ -128,7 +128,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#241a30] bg-[#0c0811]/90 backdrop-blur-md">
-      <div className="mx-auto flex h-[68px] max-w-[1536px] items-center gap-3 px-4 sm:px-6 lg:gap-6 lg:px-10">
+      <div className="mx-auto flex h-17 max-w-384 items-center gap-3 px-4 sm:px-6 lg:gap-6 lg:px-10">
 
         {/* Logo */}
         <NavLink to="/" className="flex shrink-0 items-center gap-2">
@@ -140,7 +140,7 @@ export default function Navbar() {
         </NavLink>
 
         {/* Desktop navigation */}
-        <nav className="hidden items-center gap-5 lg:flex">
+        <nav className="items-center gap-5 lg:flex">
           {MAIN_LINKS.map(([label, to, items]) =>
             items ? (
               <NavDropdown
@@ -171,7 +171,7 @@ export default function Navbar() {
         {/* Search */}
         <form
           onSubmit={submit}
-          className="ml-auto hidden max-w-md flex-1 items-center gap-2 rounded-full border border-[#2c2038] bg-[#150f1d] px-3.5 py-2 text-sm text-[#a79bc0] transition focus-within:border-[#7447a1] md:flex"
+          className="ml-auto  max-w-md flex-1 items-center gap-2 rounded-full border border-[#2c2038] bg-[#150f1d] px-3.5 py-2 text-sm text-[#a79bc0] transition focus-within:border-[#7447a1] md:flex"
         >
           <FiSearch size={14} />
 
@@ -189,7 +189,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Notifications"
-            className="hidden h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
+            className=" h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
           >
             <FiBell size={15} />
           </button>
@@ -199,7 +199,7 @@ export default function Navbar() {
             type="button"
             aria-label="Toggle theme"
             onClick={toggleTheme}
-            className="hidden h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
+            className=" h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
           >
             {theme === "dark" ? (
               <FiMoon size={15} />
@@ -212,7 +212,7 @@ export default function Navbar() {
           <NavLink
             to="/bookmarks"
             aria-label="Bookmarks"
-            className="hidden h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
+            className=" h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
           >
             <FiBookmark size={15} />
           </NavLink>
@@ -221,12 +221,12 @@ export default function Navbar() {
           <NavLink
             to="/cart"
             aria-label={`Cart (${cartCount} items)`}
-            className="relative hidden h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
+            className="relative  h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
           >
             <FiShoppingBag size={15} />
 
             {cartCount > 0 && (
-              <span className="absolute right-1 top-1 flex min-h-4.5 min-w-4.5 items-center justify-center rounded-full border-2 border-[#0c0811] bg-gradient-to-r from-[#ff3e9e] to-[#9b5cff] px-1.5 text-[10px] font-bold text-white">
+              <span className="absolute right-1 top-1 flex min-h-4.5 min-w-4.5 items-center justify-center rounded-full border-2 border-[#0c0811] bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] px-1.5 text-[10px] font-bold text-white">
                 {cartCount > 9 ? "9+" : cartCount}
               </span>
             )}
@@ -234,14 +234,14 @@ export default function Navbar() {
 
           {/* Account dropdown */}
           <div
-            className="relative hidden sm:block"
+            className="relative  sm:block"
             onMouseEnter={() => setAvatarOpen(true)}
             onMouseLeave={() => setAvatarOpen(false)}
           >
             <button
               type="button"
               aria-label="Account"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-[#ff3e9e] to-[#9b5cff] text-white"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] text-white"
             >
               <FiUser size={15} />
             </button>
@@ -294,7 +294,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`overflow-hidden border-t border-[#241a30] bg-[#0c0811] transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
-          open ? "max-h-[560px] opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-140 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="flex flex-col gap-1 px-4 py-4 sm:px-6">
@@ -366,7 +366,7 @@ export default function Navbar() {
             Cart
 
             {cartCount > 0 && (
-              <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-r from-[#ff3e9e] to-[#9b5cff] text-[10px] font-bold text-white">
+              <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] text-[10px] font-bold text-white">
                 {cartCount > 9 ? "9+" : cartCount}
               </span>
             )}
@@ -399,7 +399,7 @@ export default function Navbar() {
               <NavLink
                 to="/signup"
                 onClick={() => setOpen(false)}
-                className="rounded-full bg-gradient-to-r from-[#ff3e9e] to-[#9b5cff] px-4 py-2.5 text-center text-xs font-bold text-white"
+                className="rounded-full bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] px-4 py-2.5 text-center text-xs font-bold text-white"
               >
                 Sign Up
               </NavLink>
