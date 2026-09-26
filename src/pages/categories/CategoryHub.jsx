@@ -7,16 +7,6 @@ import EventCard from "../../components/cards/EventCard";
 import ProductCard from "../../components/cards/ProductCard";
 import FilterPill from "../../components/ui/FilterPill";
 
-const CATEGORY_META = {
-  anime: { label: "Anime", icon: "🎌" },
-  gaming: { label: "Gaming", icon: "🎮" },
-  movies: { label: "Movies", icon: "🎬" },
-  tvshows: { label: "TV Shows", icon: "📺" },
-  kpop: { label: "K-Pop", icon: "🎤" },
-  comics: { label: "Comics", icon: "💥" },
-  manga: { label: "Manga", icon: "📖" },
-};
-
 const FILTERS = ["All", "Articles", "Gallery", "Videos", "Characters", "Events", "Merchandise"];
 const SORTS = ["Newest", "A–Z", "Popular"];
 
@@ -29,8 +19,8 @@ function typeToFilter(type) {
 
 export default function CategoryHub() {
   const { category = "anime" } = useParams();
-  const meta = CATEGORY_META[category] || { label: category, icon: "✨" };
 
+  const [categories, setCategories] = useState([]);
   const [content, setContent] = useState([]);
   const [characters, setCharacters] = useState([]);
   const [events, setEvents] = useState([]);
@@ -42,12 +32,14 @@ export default function CategoryHub() {
     let cancelled = false;
     setFilter("All");
     Promise.all([
+      fetch("/data/categories.json").then((r) => (r.ok ? r.json() : [])),
       fetch(`/data/${category}.json`).then((r) => (r.ok ? r.json() : [])),
       fetch(`/data/characters.json`).then((r) => (r.ok ? r.json() : [])),
       fetch(`/data/events.json`).then((r) => (r.ok ? r.json() : [])),
       fetch(`/data/merchandise.json`).then((r) => (r.ok ? r.json() : [])),
-    ]).then(([contentData, charData, eventData, merchData]) => {
+    ]).then(([categoryData, contentData, charData, eventData, merchData]) => {
       if (cancelled) return;
+      setCategories(Array.isArray(categoryData) ? categoryData : []);
       setContent(Array.isArray(contentData) ? contentData : []);
       setCharacters((charData || []).filter((c) => c.category === category));
       setEvents((eventData || []).filter((e) => e.category === category));
@@ -55,6 +47,11 @@ export default function CategoryHub() {
     });
     return () => { cancelled = true; };
   }, [category]);
+
+  const meta = useMemo(
+    () => categories.find((item) => item.slug === category) || { label: category, icon: "✨" },
+    [categories, category]
+  );
 
   const sortFn = (a, b, key) => {
     if (sort === "A–Z") return (a[key] || "").localeCompare(b[key] || "");
