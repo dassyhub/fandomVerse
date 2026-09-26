@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FiBookmark, FiMenu, FiX, FiSearch, FiMessageCircle } from "react-icons/fi";
+import { FiBookmark, FiMenu, FiX, FiSearch, FiMessageCircle, FiShoppingBag } from "react-icons/fi";
+import { useCart } from "../../context/CartContext";
 
 const links = [
   ["Home", "/"],
@@ -13,6 +14,8 @@ const links = [
 export default function Navbar() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const { cart } = useCart();
+  const cartCount = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
 
   const linkClass = ({ isActive }) =>
     `text-sm font-medium transition-colors ${
@@ -60,6 +63,18 @@ export default function Navbar() {
             className="hidden h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
           >
             <FiBookmark size={15} />
+          </NavLink>
+          <NavLink
+            to="/cart"
+            aria-label={`Cart (${cartCount} items)`}
+            className="hidden h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex relative"
+          >
+            <FiShoppingBag size={15} />
+            {cartCount > 0 && (
+              <span className="absolute top-1 right-1 min-h-[18px] min-w-[18px] px-1.5 items-center justify-center rounded-full bg-gradient-to-r from-[#ff3e9e] to-[#9b5cff] text-[10px] font-bold text-white border-2 border-[#0c0811]">
+                {cartCount > 9 ? "9+" : cartCount}
+              </span>
+            )}
           </NavLink>
           <span className="hidden h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] sm:flex">
             <FiMessageCircle size={15} />
@@ -131,6 +146,19 @@ export default function Navbar() {
             className="rounded-lg px-3 py-2.5 text-sm font-medium text-[#c9bfd9] hover:bg-[#150f1d] hover:text-white"
           >
             Bookmarks
+          </NavLink>
+          <NavLink
+            to="/cart"
+            onClick={() => setOpen(false)}
+            className="rounded-lg px-3 py-2.5 text-sm font-medium text-[#c9bfd9] hover:bg-[#150f1d] hover:text-white flex items-center gap-2"
+          >
+            <FiShoppingBag size={16} />
+            Cart
+            {cartCount > 0 && (
+              <span className="ml-2 h-5 w-5 items-center justify-center rounded-full bg-gradient-to-r from-[#ff3e9e] to-[#9b5cff] text-[10px] font-bold text-white">
+                {cartCount > 9 ? "9+" : cartCount}
+              </span>
+            )}
           </NavLink>
           <div className="mt-2 flex gap-2">
             <NavLink

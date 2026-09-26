@@ -1,0 +1,257 @@
+[
+  {
+    "id": "anime-merch-001",
+    "name": "Demon Slayer Corps Oversized Hoodie",
+    "image": "/images/merch/merch-001.jpg",
+    "category": "anime",
+    "priceRange": "$45-60",
+    "price": 54.99,
+    "description": "Oversized anime hoodie featuring a bold Demon Slayer-inspired character and Corps emblem graphic. Designed for fans who want a comfortable streetwear look.",
+    "details": {
+      "material": "80% cotton, 20% polyester",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "franchise": "Demon Slayer"
+    },
+    "inStock": true
+  },
+  {
+    "id": "anime-merch-002",
+    "name": "Anime Heroes Enamel Pin Collection",
+    "image": "/images/merch/merch-002.jpg",
+    "category": "anime",
+    "priceRange": "$15-25",
+    "price": 19.99,
+    "description": "Collector's enamel pin set featuring six colorful anime-inspired heroes and iconic symbols. Perfect for backpacks, jackets, and display boards.",
+    "details": {
+      "material": "Zinc alloy with hard enamel",
+      "sizes": ["One Size"],
+      "franchise": "Anime Collection"
+    },
+    "inStock": true
+  },
+  {
+    "id": "gaming-merch-001",
+    "name": "Cyber Warrior Gaming Hoodie",
+    "image": "/images/merch/merch-003.jpg",
+    "category": "gaming",
+    "priceRange": "$45-65",
+    "price": 59.99,
+    "description": "Premium gaming hoodie featuring a futuristic cyber-warrior emblem and neon-inspired graphics. Built for gaming sessions, conventions, and everyday streetwear.",
+    "details": {
+      "material": "70% cotton, 30% polyester",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "franchise": "Cyber Warrior"
+    },
+    "inStock": true
+  },
+  {
+    "id": "gaming-merch-002",
+    "name": "Retro Arcade Enamel Pin Set",
+    "image": "/images/merch/merch-004.jpg",
+    "category": "gaming",
+    "priceRange": "$15-22",
+    "price": 18.99,
+    "description": "Six gaming-inspired enamel pins featuring a controller, arcade machine, pixel sword, joystick, power-up, and retro game icon.",
+    "details": {
+      "material": "Zinc alloy with hard enamel",
+      "sizes": ["One Size"],
+      "franchise": "Retro Arcade"
+    },
+    "inStock": true
+  },
+  {
+    "id": "movies-merch-001",
+    "name": "Galactic Odyssey Movie Poster Hoodie",
+    "image": "/images/merch/merch-005.jpg",
+    "category": "movies",
+    "priceRange": "$50-70",
+    "price": 59.99,
+    "description": "Cinematic heavyweight hoodie featuring dramatic space artwork inspired by classic science-fiction movie posters.",
+    "details": {
+      "material": "100% heavyweight cotton",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "franchise": "Galactic Odyssey"
+    },
+    "inStock": true
+  },
+  {
+    "id": "movies-merch-002",
+    "name": "Galactic Odyssey Movie Pin Set",
+    "image": "/images/merch/merch-006.jpg",
+    "category": "movies",
+    "priceRange": "$15-25",
+    "price": 19.99,
+    "description": "Collector's pin set inspired by iconic moments from a futuristic space adventure, including planets, spacecraft, characters, and movie symbols.",
+    "details": {
+      "material": "Brass with soft enamel",
+      "sizes": ["One Size"],
+      "franchise": "Galactic Odyssey"
+    },
+    "inStock": true
+  },
+  {
+    "id": "tvshows-merch-001",
+    "name": "Neon City Skyline Hoodie",
+    "image": "/images/merch/merch-007.jpg",
+    "category": "tvshows",
+    "priceRange": "$45-65",
+    "price": 54.99,
+    "description": "Streetwear-inspired hoodie featuring a glowing futuristic city skyline and bold television-series-style typography.",
+    "details": {
+      "material": "75% cotton, 25% polyester",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "franchise": "Neon City"
+    },
+    "inStock": true
+  },
+  {
+    "id": "tvshows-merch-002",
+    "name": "Neon City Character Pin Set",
+    "image": "/images/merch/merch-008.jpg",
+    "category": "tvshows",
+    "priceRange": "$15-22",
+    "price": 18.99,
+    "description": "Character-focused enamel pin collection inspired by a futuristic television series, featuring the show's main cast and recognizable symbols.",
+    "details": {
+      "material": "Iron with hard enamel",
+      "sizes": ["One Size"],
+      "franchise": "Neon City"
+    },
+    "inStock": true
+  },
+  {
+    "id": "kpop-merch-001",
+    "name": "LUNARIS Moonlight Tour Hoodie",
+    "image": "/images/merch/merch-009.jpg",
+    "category": "kpop",
+    "priceRange": "$50-70",
+    "price": 59.99,
+    "description": "K-pop-inspired oversized hoodie featuring a sleek moon logo and holographic tour-style graphics inspired by an idol group's comeback era.",
+    "details": {
+      "material": "65% polyester, 35% cotton",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "franchise": "LUNARIS"
+    },
+    "inStock": true
+  },
+  {
+    "id": "kpop-merch-002",
+    "name": "LUNARIS Member Pin Collection",
+    "image": "/images/merch/merch-010.jpg",
+    "category": "kpop",
+    "priceRange": "$18-28",
+    "price": 22.99,
+    "description": "Collectible K-pop pin set featuring seven member-inspired designs plus a LUNARIS group logo pin, packaged in a premium display box.",
+    "details": {
+      "material": "Zinc alloy with glitter enamel",
+      "sizes": ["One Size"],
+      "franchise": "LUNARIS"
+    },
+    "inStock": true
+  },
+  {
+    "id": "comics-merch-001",
+    "name": "Superhero Legacy Comic Hoodie",
+    "image": "/images/merch/merch-011.jpg",
+    "category": "comics",
+    "priceRange": "$45-65",
+    "price": 57.99,
+    "description": "Classic comic-book hoodie featuring a bold superhero crest surrounded by vintage comic-panel artwork and distressed print details.",
+    "details": {
+      "material": "80% cotton, 20% polyester",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "franchise": "Superhero Legacy"
+    },
+    "inStock": true
+  },
+  {
+    "id": "comics-merch-002",
+    "name": "Superhero Legends Collector Pin Set",
+    "image": "/images/merch/merch-012.jpg",
+    "category": "comics",
+    "priceRange": "$16-25",
+    "price": 19.99,
+    "description": "Comic-book collector pin set featuring heroes, villains, symbols, and iconic comic-style artwork.",
+    "details": {
+      "material": "Copper with soft enamel",
+      "sizes": ["One Size"],
+      "franchise": "Superhero Legends"
+    },
+    "inStock": true
+  },
+  {
+    "id": "manga-merch-001",
+    "name": "Ronin Spirit Manga Hoodie",
+    "image": "/images/merch/merch-013.jpg",
+    "category": "manga",
+    "priceRange": "$50-70",
+    "price": 62.99,
+    "description": "Heavyweight oversized hoodie featuring Japanese-inspired kanji, ink-brush artwork, and a lone ronin illustration.",
+    "details": {
+      "material": "100% heavyweight cotton",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "franchise": "Ronin Spirit"
+    },
+    "inStock": true
+  },
+  {
+    "id": "manga-merch-002",
+    "name": "Ronin Spirit Manga Panel Pin Set",
+    "image": "/images/merch/merch-014.jpg",
+    "category": "manga",
+    "priceRange": "$15-25",
+    "price": 19.99,
+    "description": "Manga-inspired enamel pin collection featuring characters, weapons, symbols, and memorable panel-style artwork.",
+    "details": {
+      "material": "Brass with hard enamel",
+      "sizes": ["One Size"],
+      "franchise": "Ronin Spirit"
+    },
+    "inStock": true
+  },
+  {
+    "id": "anime-merch-003",
+    "name": "Ultimate Fandom Festival Graphic Tee",
+    "image": "/images/merch/merch-015.jpg",
+    "category": "anime",
+    "priceRange": "$25-35",
+    "price": 29.99,
+    "description": "Limited-edition graphic tee celebrating anime, gaming, movies, comics, manga, and pop culture with a colorful multi-fandom design.",
+    "details": {
+      "material": "100% ring-spun cotton",
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "franchise": "FandomVerse"
+    },
+    "inStock": true
+  },
+  {
+    "id": "movies-merch-003",
+    "name": "FandomVerse Everyday Canvas Tote",
+    "image": "/images/merch/merch-016.jpg",
+    "category": "movies",
+    "priceRange": "$18-30",
+    "price": 24.99,
+    "description": "Minimalist canvas tote featuring the FandomVerse wordmark. Spacious enough for books, collectibles, everyday essentials, and a laptop.",
+    "details": {
+      "material": "12oz organic cotton canvas",
+      "sizes": ["One Size"],
+      "franchise": "FandomVerse"
+    },
+    "inStock": true
+  },
+  {
+    "id": "gaming-merch-003",
+    "name": "FandomVerse Hero Acrylic Standee Collection",
+    "image": "/images/merch/merch-017.jpg",
+    "category": "gaming",
+    "priceRange": "$30-45",
+    "price": 34.99,
+    "description": "Seven-piece acrylic display collection featuring colorful heroes representing anime, gaming, movies, TV, K-pop, comics, and manga fandoms.",
+    "details": {
+      "material": "3mm clear acrylic with printed artwork and colored bases",
+      "sizes": ["One Size"],
+      "franchise": "FandomVerse"
+    },
+    "inStock": false
+  }
+]
