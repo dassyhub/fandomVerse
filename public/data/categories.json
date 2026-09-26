@@ -1,0 +1,65 @@
+[
+  {
+    "id": "anime",
+    "slug": "anime",
+    "name": "Anime",
+    "label": "Anime",
+    "icon": "🎌",
+    "path": "/category/anime",
+    "description": "Anime releases, character spotlights, fan theories, and trending series."
+  },
+  {
+    "id": "gaming",
+    "slug": "gaming",
+    "name": "Gaming",
+    "label": "Gaming",
+    "icon": "🎮",
+    "path": "/category/gaming",
+    "description": "Game drops, tournaments, gaming culture, and favorite characters."
+  },
+  {
+    "id": "movies",
+    "slug": "movies",
+    "name": "Movies",
+    "label": "Movies",
+    "icon": "🎬",
+    "path": "/category/movies",
+    "description": "Movie news, trailers, reviews, and fandom highlights."
+  },
+  {
+    "id": "tvshows",
+    "slug": "tvshows",
+    "name": "TV Shows",
+    "label": "TV Shows",
+    "icon": "📺",
+    "path": "/category/tvshows",
+    "description": "Trending episodes, top shows, and fan-favorite story arcs."
+  },
+  {
+    "id": "kpop",
+    "slug": "kpop",
+    "name": "K-Pop",
+    "label": "K-Pop",
+    "icon": "🎤",
+    "path": "/category/kpop",
+    "description": "K-pop releases, idols, concerts, and fandom buzz."
+  },
+  {
+    "id": "comics",
+    "slug": "comics",
+    "name": "Comics",
+    "label": "Comics",
+    "icon": "💥",
+    "path": "/category/comics",
+    "description": "Comic arcs, superhero stories, and collectible fandom culture."
+  },
+  {
+    "id": "manga",
+    "slug": "manga",
+    "name": "Manga",
+    "label": "Manga",
+    "icon": "📖",
+    "path": "/category/manga",
+    "description": "Manga chapters, recommendations, and fandom discoveries."
+  }
+]
