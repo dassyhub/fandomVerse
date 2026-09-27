@@ -1,42 +1,7 @@
 [
-  {
-    "id": "gaming-content-1",
-    "title": "The Rise of Starforge Online: A Global Phenomenon",
-    "type": "ARTICLE",
-    "category": "gaming",
-    "description": "How Starforge Online became one of the most talked-about fandoms this year.",
-    "meta": "6 min read"
-  },
-  {
-    "id": "gaming-content-2",
-    "title": "Starforge Online: Behind the Scenes",
-    "type": "VIDEO",
-    "category": "gaming",
-    "description": "An inside look at how the world of Starforge Online was built.",
-    "meta": "8:24"
-  },
-  {
-    "id": "gaming-content-3",
-    "title": "Starforge Online \u2014 Official Trailer",
-    "type": "TRAILER",
-    "category": "gaming",
-    "description": "The latest teaser for the next chapter of Starforge Online.",
-    "meta": "Upcoming"
-  },
-  {
-    "id": "gaming-content-4",
-    "title": "Starforge Online Fan Art Gallery",
-    "type": "GALLERY",
-    "category": "gaming",
-    "description": "A curated collection of fan-made art inspired by Starforge Online.",
-    "meta": "48 photos"
-  },
-  {
-    "id": "gaming-content-5",
-    "title": "Starforge Online: The Soundtrack Breakdown",
-    "type": "AUDIO",
-    "category": "gaming",
-    "description": "A fan podcast digging into the music of Starforge Online.",
-    "meta": "34 min"
-  }
+  {"id":"gaming-content-1","title":"Grand Theft Auto VI: Vice City Preview","type":"ARTICLE","category":"gaming","description":"A preview of Grand Theft Auto VI's return to Vice City, where Jason and Lucia are drawn into a criminal conspiracy across Leonida.","meta":"5 min read","thumbnail":"/images/gaming/gtaa.jpeg","tags":["GTA VI","Rockstar Games"],"body":["Grand Theft Auto VI returns players to Vice City and the wider state of Leonida.","The trailer centers Jason and Lucia as a score pulls them into a larger conspiracy."]},
+  {"id":"gaming-content-2","title":"Grand Theft Auto VI Trailer 2","type":"VIDEO","category":"gaming","description":"Rockstar Games' Grand Theft Auto VI Trailer 2 introduces Jason and Lucia's dangerous path through Vice City and Leonida.","meta":"Trailer 2","thumbnail":"/images/gaming/gtaa.jpeg","youtubeUrl":"https://www.youtube.com/watch?v=VQRLujxTm3c","embedUrl":"https://www.youtube.com/embed/VQRLujxTm3c","sourceTitle":"Grand Theft Auto VI Trailer 2","tags":["GTA VI","trailer"]},
+  {"id":"gaming-content-3","title":"Call of Duty: Warzone Loadout Gallery","type":"GALLERY","category":"gaming","description":"A local visual gallery for Call of Duty: Warzone's tactical, battle-royale atmosphere.","meta":"1 image","thumbnail":"/images/gaming/cod-warzone.jpeg","galleryImages":["/images/gaming/cod-warzone.jpeg"]},
+  {"id":"gaming-content-4","title":"Grand Theft Auto VI: Trailer Notes","type":"ARTICLE","category":"gaming","description":"A short breakdown of the characters, locations, and high-risk setup shown in Rockstar Games' Grand Theft Auto VI Trailer 2.","meta":"4 min read","thumbnail":"/images/gaming/gtaa.jpeg","body":["The second GTA VI trailer frames Vice City as the setting for a story about trust under pressure.","Jason and Lucia anchor a tour of Leonida's crowded streets, waterways, and nightlife."]},
+  {"id":"gaming-content-5","title":"Warzone Local Audio Sample","type":"AUDIO","category":"gaming","description":"A FandomVerse local audio sample shown with Warzone artwork; it is not an official Call of Duty soundtrack.","meta":"Audio sample","thumbnail":"/images/gaming/cod-warzone.jpeg","cover":"/images/gaming/cod-warzone.jpeg","mediaSrc":"/media/fandomverse-audio.wav"}
 ]

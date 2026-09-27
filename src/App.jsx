@@ -16,6 +16,7 @@ import Characters from "./pages/characters/Characters";
 import CharacterProfile from "./pages/characters/CharacterProfile";
 import Events from "./pages/events/Events";
 import EventDetail from "./pages/events/EventDetail";
+import Explore from "./pages/explore/Explore";
 import ReleaseRadar from "./pages/releases/ReleaseRadar";
 import Store from "./pages/store/Store";
 import ProductDetail from "./pages/store/ProductDetail";
@@ -27,8 +28,15 @@ import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import About from "./pages/info/About";
 import Contact from "./pages/info/Contact";
+import Sitemap from "./pages/Sitemap";
+import IntroScreen from "./components/IntroScreen";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [intro, setIntro] = useState(() => sessionStorage.getItem("fandomverse-intro-seen") !== "1");
+  useEffect(() => { if (!intro) sessionStorage.setItem("fandomverse-intro-seen", "1"); }, [intro]);
+  if (intro) return <IntroScreen onComplete={() => { sessionStorage.setItem("fandomverse-intro-seen", "1"); setIntro(false); }} />;
+
   return (
     <ThemeProvider>
       <BookmarkProvider>
@@ -48,6 +56,7 @@ export default function App() {
           <Route path="/characters/:id" element={<CharacterProfile />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:id" element={<EventDetail />} />
+          <Route path="/explore" element={<Explore/>} />
           <Route path="/releases" element={<ReleaseRadar />} />
           <Route path="/store" element={<Store />} />
           <Route path="/store/:id" element={<ProductDetail />} />
@@ -59,6 +68,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </main>
       <Chatbot />

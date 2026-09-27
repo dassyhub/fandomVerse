@@ -1,1 +1,9 @@
-[]
+[
+  {"id":"release-anime-1","title":"Nightfall Reapers: Season Premiere","category":"anime","type":"release","status":"UPCOMING","date":"Oct 18, 2026","description":"The next chapter of Nightfall Reapers arrives with a new story arc and character reveals."},
+  {"id":"release-gaming-1","title":"Starforge Online: Eclipse Update","category":"gaming","type":"release","status":"UPCOMING","date":"Oct 24, 2026","description":"A new Starforge Online update introduces an eclipse-themed region and challenge set."},
+  {"id":"release-movies-1","title":"The Last Horizon: First Look","category":"movies","type":"trailer","status":"TRAILER","date":"Nov 2, 2026","description":"The latest preview for The Last Horizon is scheduled for the FandomVerse release calendar."},
+  {"id":"release-tv-1","title":"Static City: New Chapter","category":"tvshows","type":"release","status":"UPCOMING","date":"Nov 8, 2026","description":"Static City returns with a new chapter and expanded cast storyline."},
+  {"id":"release-kpop-1","title":"LUNARIS: Midnight Echo","category":"kpop","type":"release","status":"UPCOMING","date":"Nov 15, 2026","description":"LUNARIS announces a new original release for the FandomVerse music calendar."},
+  {"id":"release-comics-1","title":"Ironclad Legion: New Arc","category":"comics","type":"release","status":"UPCOMING","date":"Nov 21, 2026","description":"A new Ironclad Legion story arc expands the original comic universe."},
+  {"id":"release-manga-1","title":"Ashen Blade: Chapter Zero","category":"manga","type":"release","status":"UPCOMING","date":"Nov 28, 2026","description":"Ashen Blade opens a new storyline with a special introductory chapter."}
+]
