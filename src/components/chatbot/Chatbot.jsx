@@ -1,33 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-const replies = {
-  "Trending anime": "Try Anime → Trending Now or explore Fan Pulse.",
-  "Upcoming events": "Check the Events page for upcoming fandom events.",
-  "Find merchandise": "The Store has fandom products and a temporary cart.",
-};
-
-export default function Chatbot() {
-  const [open, setOpen] = useState(false);
-  const [message, setMessage] = useState("");
-
-  return (
-    <div className="chatbot">
-      {open && (
-        <section className="chat-panel">
-          <div className="section-title"><strong>FandomVerse Assistant</strong><button className="icon-btn" onClick={() => setOpen(false)}>×</button></div>
-          <p>Hi! I can help you discover fandoms, content, events and merchandise.</p>
-          <div className="quick-replies">
-            {Object.keys(replies).map((q) => <button key={q} onClick={() => setMessage(replies[q])}>{q}</button>)}
-          </div>
-          {message && <p style={{ marginTop: 14, color: "#f7f2ff" }}>{message}</p>}
-          <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
-            <Link className="button ghost" to="/fandom-match">Fandom Match</Link>
-            <Link className="button ghost" to="/fan-pulse">Fan Pulse</Link>
-          </div>
-        </section>
-      )}
-      <button className="chat-toggle" aria-label="Open chatbot" onClick={() => setOpen((v) => !v)}>💬</button>
-    </div>
-  );
-}
+const replies={"Trending anime":"Try Anime → Trending Now or explore Fan Pulse.","Upcoming events":"Check the Events page for upcoming fandom events.","Find merchandise":"The Store has fandom products and a temporary cart."};
+function answer(text){const q=text.toLowerCase();if(q.includes("anime"))return "Explore the Anime hub for articles, characters, galleries, videos and events.";if(q.includes("event"))return "The Events page contains the current local event records.";if(q.includes("merch")||q.includes("store"))return "Visit the Store for fandom merchandise and the temporary cart.";if(q.includes("bookmark"))return "Use the bookmark icon on content, characters and events, then manage everything from Bookmarks.";if(q.includes("release"))return "Release Radar is the place for upcoming fandom releases and trailers.";return "I can help with anime, events, merchandise, bookmarks, releases, search and navigation. Try a quick reply or ask me one of those.";}
+export default function Chatbot(){const[open,setOpen]=useState(false);const[input,setInput]=useState("");const[message,setMessage]=useState("");const send=(e)=>{e?.preventDefault();if(!input.trim())return;setMessage(answer(input));setInput("");};return <div className="chatbot">{open&&<section className="chat-panel" aria-label="FandomVerse Assistant"><div className="section-title"><strong>FandomVerse Assistant</strong><button className="icon-btn" onClick={()=>setOpen(false)} aria-label="Close chatbot">×</button></div><p>Hi! I can help you discover fandoms, content, events and merchandise.</p><div className="quick-replies">{Object.keys(replies).map(q=><button key={q} onClick={()=>setMessage(replies[q])}>{q}</button>)}</div><form className="chat-input" onSubmit={send}><input value={input} onChange={e=>setInput(e.target.value)} placeholder="Ask a question…" aria-label="Ask the chatbot"/><button className="button primary" type="submit">Send</button></form>{message&&<p className="chat-response">{message}</p>}<div className="chat-links"><Link className="button ghost" to="/fandom-match">Fandom Match</Link><Link className="button ghost" to="/fan-pulse">Fan Pulse</Link></div></section>}<button className="chat-toggle" aria-label="Open chatbot" onClick={()=>setOpen(v=>!v)}>💬</button></div>}

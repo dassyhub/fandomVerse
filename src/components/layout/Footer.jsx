@@ -1,17 +1,37 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+function useVisitorCount() {
+  const [count, setCount] = useState(() => Number(localStorage.getItem("fandomverse-visitor-count") || 0));
+  useEffect(() => {
+    const key = "fandomverse-visit-session";
+    if (!sessionStorage.getItem(key)) {
+      sessionStorage.setItem(key, "1");
+      const next = Number(localStorage.getItem("fandomverse-visitor-count") || 0) + 1;
+      localStorage.setItem("fandomverse-visitor-count", String(next));
+      setCount(next);
+    }
+  }, []);
+  return count;
+}
+
 export default function Footer() {
-  return (
-    <footer className="border-t border-[#241a30] bg-[#0c0811]">
-      <div className="mx-auto flex max-w-[1536px] flex-col gap-4 px-4 py-8 text-sm text-[#a79bc0] sm:px-6 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+  const visitors = useVisitorCount();
+  const [now, setNow] = useState(new Date());
+  useEffect(() => { const id = setInterval(() => setNow(new Date()), 1000); return () => clearInterval(id); }, []);
+
+  return <footer className="border-t border-[#241a30] bg-[#0c0811] site-footer">
+    <div className="mx-auto flex max-w-384 flex-col gap-4 px-4 py-8 text-sm text-[#a79bc0] sm:px-6 lg:px-10">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <span className="font-semibold text-white">FANDOMVERSE</span>
         <span className="text-xs sm:text-sm">Portal for the Fandom World · © 2026</span>
-        <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm">
-          <Link to="/sitemap" className="hover:text-white">Sitemap</Link>
-          <Link to="/contact" className="hover:text-white">Contact Us</Link>
-          <Link to="/about" className="hover:text-white">About Us</Link>
-        </div>
+        <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm"><Link to="/sitemap">Sitemap</Link><Link to="/contact">Contact Us</Link><Link to="/about">About Us</Link></div>
       </div>
-    </footer>
-  );
+      <div className="flex flex-wrap gap-4 border-t border-[#241a30] pt-4 text-xs">
+        <span>Visitors: <strong className="text-white">{visitors.toLocaleString()}</strong></span>
+        <span>Local time: <strong className="text-white">{now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</strong></span>
+        <span>Date: <strong className="text-white">{now.toLocaleDateString([], { day: "2-digit", month: "short", year: "numeric" })}</strong></span>
+      </div>
+    </div>
+  </footer>;
 }

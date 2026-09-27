@@ -1,42 +1,7 @@
 [
-  {
-    "id": "tvshows-content-1",
-    "title": "The Rise of Static City: A Global Phenomenon",
-    "type": "ARTICLE",
-    "category": "tvshows",
-    "description": "How Static City became one of the most talked-about fandoms this year.",
-    "meta": "6 min read"
-  },
-  {
-    "id": "tvshows-content-2",
-    "title": "Static City: Behind the Scenes",
-    "type": "VIDEO",
-    "category": "tvshows",
-    "description": "An inside look at how the world of Static City was built.",
-    "meta": "8:24"
-  },
-  {
-    "id": "tvshows-content-3",
-    "title": "Static City \u2014 Official Trailer",
-    "type": "TRAILER",
-    "category": "tvshows",
-    "description": "The latest teaser for the next chapter of Static City.",
-    "meta": "Upcoming"
-  },
-  {
-    "id": "tvshows-content-4",
-    "title": "Static City Fan Art Gallery",
-    "type": "GALLERY",
-    "category": "tvshows",
-    "description": "A curated collection of fan-made art inspired by Static City.",
-    "meta": "48 photos"
-  },
-  {
-    "id": "tvshows-content-5",
-    "title": "Static City: The Soundtrack Breakdown",
-    "type": "AUDIO",
-    "category": "tvshows",
-    "description": "A fan podcast digging into the music of Static City.",
-    "meta": "34 min"
-  }
+  {"id":"tvshows-content-1","title":"Static City: Neon Mystery","type":"ARTICLE","category":"tvshows","description":"A feature on Static City, the original neon-noir television world represented by the supplied city artwork.","meta":"5 min read","thumbnail":"/images/tvshows/marty.jpeg","body":["Static City is presented as a neon-lit mystery where a changing city shapes every story.","This original FandomVerse feature explores its late-night atmosphere and ensemble storytelling."]},
+  {"id":"tvshows-content-2","title":"Static City: Season Visuals","type":"GALLERY","category":"tvshows","description":"A local Static City image gallery using the supplied neon skyline artwork.","meta":"1 image","thumbnail":"/images/tvshows/static-city.png","galleryImages":["/images/tvshows/pursuit.jpeg"]},
+  {"id":"tvshows-content-3","title":"Static City: Story Primer","type":"ARTICLE","category":"tvshows","description":"A short primer for the original Static City setting, its nighttime mood, and its serialized mystery.","meta":"3 min read","thumbnail":"/images/tvshows/static-city.png","body":["Static City begins with a city that never quite reveals its full story.","The supplied artwork is used consistently for this original setting."]},
+  {"id":"tvshows-content-4","title":"Static City Local Audio Sample","type":"AUDIO","category":"tvshows","description":"A FandomVerse local audio sample paired with Static City artwork; it is not an official television soundtrack.","meta":"Audio sample","thumbnail":"/images/tvshows/static-city.png","cover":"/images/tvshows/static-city.png","mediaSrc":"/media/fandomverse-audio.wav"},
+  {"id":"tvshows-content-5","title":"Static City: Production Board","type":"ARTICLE","category":"tvshows","description":"A concept-board article for the original Static City visual direction.","meta":"4 min read","thumbnail":"/images/tvshows/static-city.png","body":["This original concept board uses the supplied Static City visual as its single, consistent reference."]}
 ]

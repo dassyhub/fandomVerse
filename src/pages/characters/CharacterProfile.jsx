@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { FiArrowRight, FiBookmark } from "react-icons/fi";
 import Breadcrumbs from "../../components/layout/Breadcrumbs";
 import { useBookmarks } from "../../context/BookmarkContext";
+import { imageForCategory } from "../../constants/categoryAssets";
 
 const CATEGORY_LABEL = {
   anime: "Anime", gaming: "Gaming", movies: "Movies", tvshows: "TV Shows",
@@ -55,6 +56,7 @@ export default function CharacterProfile() {
 
       <div className="flex flex-col gap-6 lg:flex-row lg:gap-10">
         <div className="relative mx-auto aspect-[4/5] w-full max-w-[340px] shrink-0 overflow-hidden rounded-3xl bg-gradient-to-br from-pink-700/70 via-fuchsia-800/60 to-indigo-900/70 lg:mx-0 lg:w-[360px] lg:max-w-none">
+          <img src={character.image || imageForCategory(character.category)} alt={character.name} className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(255,255,255,0.16),transparent_55%)]" />
         </div>
 
