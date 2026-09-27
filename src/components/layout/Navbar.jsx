@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   FiShield,
   FiChevronDown,
   FiSearch,
-  FiBell,
   FiMoon,
   FiSun,
   FiUser,
@@ -18,7 +17,6 @@ import {
 import { useTheme } from "../../context/ThemeContext";
 import { useCart } from "../../context/CartContext";
 
-// Explore dropdown items
 const EXPLORE_ITEMS = [
   ["Anime", "/category/anime"],
   ["Gaming", "/category/gaming"],
@@ -29,15 +27,14 @@ const EXPLORE_ITEMS = [
   ["Manga", "/category/manga"],
 ];
 
-// More dropdown items
 const MORE_ITEMS = [
   ["Bookmarks", "/bookmarks"],
   ["Release Radar", "/releases"],
+  ["Trailers", "/trailers"],
   ["About Us", "/about"],
   ["Contact Us", "/contact"],
 ];
 
-// Main navigation links
 const MAIN_LINKS = [
   ["Home", "/", null],
   ["Explore", "/explore", EXPLORE_ITEMS],
@@ -50,53 +47,52 @@ const MAIN_LINKS = [
 
 function NavDropdown({ label, to, items }) {
   const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const onPointerDown = (event) => {
+      if (!ref.current?.contains(event.target)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, []);
 
   return (
     <div
-      className="relative"
+      ref={ref}
+      className="fv-nav-dropdown"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      {to ? (
-        <NavLink
-          to={to}
-          className={({ isActive }) =>
-            `flex items-center gap-1 text-sm font-medium transition-colors ${
-              isActive ? "text-white" : "text-[#a79bc0] hover:text-white"
-            }`
-          }
-        >
-          {label}
-          <FiChevronDown
-            size={13}
-            className={`transition-transform ${open ? "rotate-180" : ""}`}
-          />
-        </NavLink>
-      ) : (
+      <div className="fv-nav-dropdown-trigger">
+        {to ? (
+          <NavLink
+            to={to}
+            className={({ isActive }) => `fv-nav-link ${isActive ? "is-active" : ""}`}
+          >
+            {label}
+          </NavLink>
+        ) : (
+          <span className="fv-nav-link">{label}</span>
+        )}
         <button
           type="button"
-          className="flex items-center gap-1 text-sm font-medium text-[#a79bc0] transition-colors hover:text-white"
+          className="fv-nav-chevron"
+          aria-label={`${open ? "Close" : "Open"} ${label} menu`}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
         >
-          {label}
-          <FiChevronDown
-            size={13}
-            className={`transition-transform ${open ? "rotate-180" : ""}`}
-          />
+          <FiChevronDown size={14} className={open ? "is-open" : ""} />
         </button>
-      )}
+      </div>
 
-      <div
-        className={`absolute left-0 top-full z-50 mt-2 w-48 origin-top rounded-xl border border-[#2c2038] bg-[#150f1d] p-1.5 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-200 ${
-          open
-            ? "translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-1 opacity-0"
-        }`}
-      >
+      <div className={`fv-nav-dropdown-menu ${open ? "is-open" : ""}`}>
         {items.map(([itemLabel, itemTo]) => (
           <NavLink
             key={itemTo}
             to={itemTo}
-            className="block rounded-lg px-3 py-2 text-sm text-[#c9bfd9] transition hover:bg-[#1c1427] hover:text-white"
+            onClick={() => setOpen(false)}
+            className="fv-nav-dropdown-link"
           >
             {itemLabel}
           </NavLink>
@@ -109,301 +105,158 @@ function NavDropdown({ label, to, items }) {
 export default function Navbar() {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
-
-  const [open, setOpen] = useState(false);
-  const [avatarOpen, setAvatarOpen] = useState(false);
-
-  // Cart functionality from the team version
   const { cart } = useCart();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
+  const accountRef = useRef(null);
   const cartCount = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
 
-  const submit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    const onPointerDown = (event) => {
+      if (!accountRef.current?.contains(event.target)) setAccountOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, []);
 
-    const q = e.currentTarget.q.value;
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+        setAccountOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
 
-    setOpen(false);
+  const submit = (event) => {
+    event.preventDefault();
+    const q = event.currentTarget.elements.q?.value.trim() || "";
+    setMobileOpen(false);
     navigate(q ? `/search?q=${encodeURIComponent(q)}` : "/search");
   };
 
+  const closeMobile = () => setMobileOpen(false);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[#241a30] bg-[#0c0811]/90 backdrop-blur-md">
-      <div className="mx-auto flex h-17 max-w-384 items-center gap-3 px-4 sm:px-6 lg:gap-6 lg:px-10">
-
-        {/* Logo */}
-        <NavLink to="/" className="flex shrink-0 items-center gap-2">
-          <FiShield size={22} className="text-[#ff3e9e]" />
-
-          <span className="text-lg font-black tracking-wide text-white sm:text-xl">
-            FANDOM<span className="text-[#ff3e9e]">VERSE</span>
-          </span>
+    <header className="fv-navbar">
+      <div className="fv-navbar-inner">
+        <NavLink to="/" className="fv-brand" onClick={closeMobile} aria-label="FandomVerse home">
+          <span className="fv-brand-mark" aria-hidden="true"><FiShield size={20} /></span>
+          <span className="fv-brand-word">FANDOM<span>VERSE</span></span>
         </NavLink>
 
-        {/* Desktop navigation */}
-        <nav className="items-center gap-5 lg:flex">
+        <nav className="fv-desktop-nav" aria-label="Primary navigation">
           {MAIN_LINKS.map(([label, to, items]) =>
             items ? (
-              <NavDropdown
-                key={label}
-                label={label}
-                to={to}
-                items={items}
-              />
+              <NavDropdown key={label} label={label} to={to} items={items} />
             ) : (
               <NavLink
                 key={label}
                 to={to}
                 end={to === "/"}
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${
-                    isActive
-                      ? "text-white"
-                      : "text-[#a79bc0] hover:text-white"
-                  }`
-                }
+                className={({ isActive }) => `fv-nav-link ${isActive ? "is-active" : ""}`}
               >
                 {label}
               </NavLink>
-            )
+            ),
           )}
         </nav>
 
-        {/* Search */}
-        <form
-          onSubmit={submit}
-          className="ml-auto  max-w-md flex-1 items-center gap-2 rounded-full border border-[#2c2038] bg-[#150f1d] px-3.5 py-2 text-sm text-[#a79bc0] transition focus-within:border-[#7447a1] md:flex"
-        >
-          <FiSearch size={14} />
-
+        <form className="fv-header-search" onSubmit={submit} role="search">
+          <FiSearch size={15} aria-hidden="true" />
           <input
             name="q"
+            type="search"
+            autoComplete="off"
             placeholder="Search anime, manga, movies, games..."
-            className="w-full bg-transparent text-white placeholder:text-[#7a6f8c] focus:outline-none"
+            aria-label="Search FandomVerse"
           />
         </form>
 
-        {/* Right-side actions */}
-        <div className="ml-auto flex items-center gap-2 lg:ml-3">
-
-          {/* Notifications */}
+        <div className="fv-nav-actions">
           <button
             type="button"
-            aria-label="Notifications"
-            className=" h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
-          >
-            <FiBell size={15} />
-          </button>
-
-          {/* Theme toggle */}
-          <button
-            type="button"
-            aria-label="Toggle theme"
+            className="fv-action-button"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             onClick={toggleTheme}
-            className=" h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
           >
-            {theme === "dark" ? (
-              <FiMoon size={15} />
-            ) : (
-              <FiSun size={15} />
-            )}
+            {theme === "dark" ? <FiMoon size={16} /> : <FiSun size={16} />}
           </button>
 
-          {/* Bookmarks */}
-          <NavLink
-            to="/bookmarks"
-            aria-label="Bookmarks"
-            className=" h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
-          >
-            <FiBookmark size={15} />
+          <NavLink to="/bookmarks" className="fv-action-button" aria-label="Bookmarks">
+            <FiBookmark size={16} />
           </NavLink>
 
-          {/* Cart */}
-          <NavLink
-            to="/cart"
-            aria-label={`Cart (${cartCount} items)`}
-            className="relative  h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-[#c9bfd9] transition hover:border-[#7447a1] hover:text-white sm:flex"
-          >
-            <FiShoppingBag size={15} />
-
-            {cartCount > 0 && (
-              <span className="absolute right-1 top-1 flex min-h-4.5 min-w-4.5 items-center justify-center rounded-full border-2 border-[#0c0811] bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] px-1.5 text-[10px] font-bold text-white">
-                {cartCount > 9 ? "9+" : cartCount}
-              </span>
-            )}
+          <NavLink to="/cart" className="fv-action-button fv-cart-action" aria-label={`Cart, ${cartCount} items`}>
+            <FiShoppingBag size={16} />
+            {cartCount > 0 && <span className="fv-cart-badge">{cartCount > 9 ? "9+" : cartCount}</span>}
           </NavLink>
 
-          {/* Account dropdown */}
-          <div
-            className="relative  sm:block"
-            onMouseEnter={() => setAvatarOpen(true)}
-            onMouseLeave={() => setAvatarOpen(false)}
-          >
+          <div className="fv-account" ref={accountRef}>
             <button
               type="button"
-              aria-label="Account"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] text-white"
+              className="fv-account-button"
+              aria-label="Account menu"
+              aria-expanded={accountOpen}
+              onClick={() => setAccountOpen((value) => !value)}
             >
-              <FiUser size={15} />
+              <FiUser size={16} />
             </button>
-
-            <div
-              className={`absolute right-0 top-full z-50 mt-2 w-44 origin-top-right rounded-xl border border-[#2c2038] bg-[#150f1d] p-1.5 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)] transition-all duration-200 ${
-                avatarOpen
-                  ? "translate-y-0 opacity-100"
-                  : "pointer-events-none -translate-y-1 opacity-0"
-              }`}
-            >
-              <NavLink
-                to="/login"
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#c9bfd9] transition hover:bg-[#1c1427] hover:text-white"
-              >
-                <FiLogIn size={14} />
-                Login
-              </NavLink>
-
-              <NavLink
-                to="/signup"
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#c9bfd9] transition hover:bg-[#1c1427] hover:text-white"
-              >
-                <FiUserPlus size={14} />
-                Sign Up
-              </NavLink>
-
-              <NavLink
-                to="/bookmarks"
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#c9bfd9] transition hover:bg-[#1c1427] hover:text-white"
-              >
-                <FiBookmark size={14} />
-                Bookmarks
-              </NavLink>
+            <div className={`fv-account-menu ${accountOpen ? "is-open" : ""}`}>
+              <NavLink to="/login" onClick={() => setAccountOpen(false)}><FiLogIn size={14} /> Login</NavLink>
+              <NavLink to="/signup" onClick={() => setAccountOpen(false)}><FiUserPlus size={14} /> Sign Up</NavLink>
+              <NavLink to="/bookmarks" onClick={() => setAccountOpen(false)}><FiBookmark size={14} /> Bookmarks</NavLink>
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <button
             type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#2c2038] text-white lg:hidden"
+            className="fv-menu-button"
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="fandomverse-mobile-menu"
+            onClick={() => setMobileOpen((value) => !value)}
           >
-            {open ? <FiX size={18} /> : <FiMenu size={18} />}
+            {mobileOpen ? <FiX size={19} /> : <FiMenu size={19} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <div
-        className={`overflow-hidden border-t border-[#241a30] bg-[#0c0811] transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
-          open ? "max-h-140 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="flex flex-col gap-1 px-4 py-4 sm:px-6">
-
-          {/* Mobile search */}
-          <form
-            onSubmit={submit}
-            className="mb-3 flex items-center gap-2 rounded-full border border-[#2c2038] bg-[#150f1d] px-3.5 py-2.5 text-sm text-[#a79bc0]"
-          >
-            <FiSearch size={14} />
-
-            <input
-              name="q"
-              placeholder="Search FandomVerse..."
-              className="w-full bg-transparent text-white placeholder:text-[#7a6f8c] focus:outline-none"
-            />
+      <div id="fandomverse-mobile-menu" className={`fv-mobile-menu ${mobileOpen ? "is-open" : ""}`}>
+        <div className="fv-mobile-menu-inner">
+          <form className="fv-mobile-search" onSubmit={submit} role="search">
+            <FiSearch size={15} aria-hidden="true" />
+            <input name="q" type="search" autoComplete="off" placeholder="Search FandomVerse..." aria-label="Search FandomVerse" />
           </form>
 
-          {MAIN_LINKS.map(([label, to, items]) => (
-            <div key={label}>
-              <NavLink
-                to={to || "#"}
-                end={to === "/"}
-                onClick={() => !items && setOpen(false)}
-                className={({ isActive }) =>
-                  `block rounded-lg px-3 py-2.5 text-sm font-medium transition ${
-                    isActive
-                      ? "bg-[#1c1427] text-white"
-                      : "text-[#c9bfd9] hover:bg-[#150f1d] hover:text-white"
-                  }`
-                }
-              >
-                {label}
-              </NavLink>
+          <nav className="fv-mobile-links" aria-label="Mobile navigation">
+            {MAIN_LINKS.map(([label, to, items]) => (
+              <div className="fv-mobile-group" key={label}>
+                {to ? (
+                  <NavLink to={to} end={to === "/"} onClick={closeMobile}>{label}</NavLink>
+                ) : (
+                  <span>{label}</span>
+                )}
+                {items && (
+                  <div className="fv-mobile-sublinks">
+                    {items.map(([itemLabel, itemTo]) => (
+                      <NavLink key={itemTo} to={itemTo} onClick={closeMobile}>{itemLabel}</NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
 
-              {items && (
-                <div className="ml-3 flex flex-col gap-0.5 border-l border-[#241a30] pl-3">
-                  {items.map(([itemLabel, itemTo]) => (
-                    <NavLink
-                      key={itemTo}
-                      to={itemTo}
-                      onClick={() => setOpen(false)}
-                      className="rounded-lg px-3 py-2 text-xs font-medium text-[#a79bc0] hover:bg-[#150f1d] hover:text-white"
-                    >
-                      {itemLabel}
-                    </NavLink>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-
-          {/* Mobile bookmarks */}
-          <NavLink
-            to="/bookmarks"
-            onClick={() => setOpen(false)}
-            className="rounded-lg px-3 py-2.5 text-sm font-medium text-[#c9bfd9] hover:bg-[#150f1d] hover:text-white"
-          >
-            Bookmarks
-          </NavLink>
-
-          {/* Mobile cart */}
-          <NavLink
-            to="/cart"
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-[#c9bfd9] hover:bg-[#150f1d] hover:text-white"
-          >
-            <FiShoppingBag size={16} />
-            Cart
-
-            {cartCount > 0 && (
-              <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] text-[10px] font-bold text-white">
-                {cartCount > 9 ? "9+" : cartCount}
-              </span>
-            )}
-          </NavLink>
-
-          {/* Mobile theme + authentication */}
-          <div className="mt-2 flex items-center justify-between">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="flex items-center gap-2 rounded-full border border-[#2c2038] px-3 py-2 text-xs font-semibold text-white"
-            >
-              {theme === "dark" ? (
-                <FiMoon size={14} />
-              ) : (
-                <FiSun size={14} />
-              )}
-              Theme
+          <div className="fv-mobile-footer-actions">
+            <button type="button" className="fv-mobile-theme" onClick={toggleTheme}>
+              {theme === "dark" ? <FiMoon size={15} /> : <FiSun size={15} />}
+              {theme === "dark" ? "Dark mode" : "Light mode"}
             </button>
-
-            <div className="flex gap-2">
-              <NavLink
-                to="/login"
-                onClick={() => setOpen(false)}
-                className="rounded-full border border-[#2c2038] px-4 py-2.5 text-center text-xs font-semibold text-white"
-              >
-                Login
-              </NavLink>
-
-              <NavLink
-                to="/signup"
-                onClick={() => setOpen(false)}
-                className="rounded-full bg-linear-to-r from-[#ff3e9e] to-[#9b5cff] px-4 py-2.5 text-center text-xs font-bold text-white"
-              >
-                Sign Up
-              </NavLink>
-            </div>
+            <NavLink to="/login" onClick={closeMobile}>Login</NavLink>
+            <NavLink to="/signup" className="fv-mobile-signup" onClick={closeMobile}>Sign Up</NavLink>
           </div>
         </div>
       </div>

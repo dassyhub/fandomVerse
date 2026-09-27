@@ -39,7 +39,7 @@ export default function MerchCard({ product }) {
         <h3 className="text-sm font-semibold text-white line-clamp-1">
           {product.name}
         </h3>
-        <p className="text-xs text-[#a79bc0]">{product.franchise}</p>
+        <p className="text-xs text-[#a79bc0]">{product.franchise || product.details?.franchise || "Fandom collection"}</p>
         <div className="mt-auto flex items-center justify-between pt-1">
           <span className="text-sm font-bold text-white">
             {product.priceRange}

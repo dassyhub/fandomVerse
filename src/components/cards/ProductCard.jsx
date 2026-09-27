@@ -21,7 +21,7 @@ export default function ProductCard({ product = {} }) {
           </h3>
         </Link>
         <p className="text-xs text-[#a79bc0]">
-          {product.franchise || "Fandom"}
+          {product.franchise || product.details?.franchise || "Fandom"}
         </p>
         <div className="mt-auto flex items-center justify-between pt-1">
           <span className="text-sm font-bold text-white">

@@ -22,7 +22,7 @@ export default function ContentCard({ item = {} }) {
       <Link to={`/content/${routeType}/${id}`} className="flex min-w-0 flex-1 flex-col">
         <div className={`relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br ${typeGradients[type] || typeGradients.ARTICLE}`}>
           {item.thumbnail ? (
-            <img src={item.thumbnail} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src={item.thumbnail} alt={item.title || "Content thumbnail"} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
           ) : (
             <div className="h-full w-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12),transparent_60%)]" />
           )}

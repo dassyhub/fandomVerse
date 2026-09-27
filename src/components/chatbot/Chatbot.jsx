@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FiMessageCircle, FiX, FiSend } from "react-icons/fi";
 
 const flow = {
   start: {
     text: "Hi! I can help you discover fandoms, content, events and merchandise. What are you into?",
-    options: ["Anime & Manga", "Gaming & Movies", "K-Pop & TV Shows", "Comics", "Events & Store"],
+    options: [
+      "Anime & Manga",
+      "Gaming & Movies",
+      "K-Pop & TV Shows",
+      "Comics",
+      "Events & Store",
+    ],
   },
   "Anime & Manga": {
     text: "Great choice! What would you like to know?",
@@ -15,7 +22,7 @@ const flow = {
     options: ["Gaming news", "Movie trailers", "Back"],
   },
   "K-Pop & TV Shows": {
-    text: "Here's what I can help with:",
+    text: "Here's what I can help you with:",
     options: ["K-Pop charts", "TV show highlights", "Back"],
   },
   Comics: {
@@ -24,7 +31,12 @@ const flow = {
   },
   "Events & Store": {
     text: "Let's find what you're looking for:",
-    options: ["Upcoming events", "Find merchandise", "Bookmark content", "Back"],
+    options: [
+      "Upcoming events",
+      "Find merchandise",
+      "Bookmark content",
+      "Back",
+    ],
   },
 };
 
@@ -32,17 +44,24 @@ const answers = {
   "Trending anime": "Try Anime → Trending Now or explore Fan Pulse.",
   "Upcoming events": "Check the Events page for upcoming fandom events.",
   "Find merchandise": "The Store has fandom products and a temporary cart.",
-  "Gaming news": "Head to Gaming → Featured Articles for the latest RPG and release news.",
-  "Movie trailers": "Visit the Trailers page to browse trailers across every category.",
-  "TV show highlights": "The TV Shows hub has episode highlights and trailer embeds.",
-  "K-Pop charts": "Check K-Pop → Chart Highlights for the latest global rankings.",
-  "Comics spotlight": "Explore Comics → Featured Issues for artist spotlights and fan art.",
-  "Manga updates": "The Manga hub lists new chapters and reader favorites.",
-  "Character profiles": "Every category page has a Characters section with bios and traits.",
-  "Bookmark content": "Use the bookmark icon on any article, media, or event to save it for later.",
+  "Gaming news":
+    "Head to Gaming → Featured Articles for the latest RPG and release news.",
+  "Movie trailers":
+    "Visit the Trailers page to browse trailers across every category.",
+  "TV show highlights":
+    "The TV Shows hub has episode highlights and trailer embeds.",
+  "K-Pop charts":
+    "Check K-Pop → Chart Highlights for the latest global rankings.",
+  "Comics spotlight":
+    "Explore Comics → Featured Issues for artist spotlights and fan art.",
+  "Manga updates":
+    "The Manga hub lists new chapters and reader favorites.",
+  "Character profiles":
+    "Every category page has a Characters section with bios and traits.",
+  "Bookmark content":
+    "Use the bookmark icon on any article, media, or event to save it for later.",
 };
 
-// keyword -> answer key, used to match free-typed text
 const keywordMap = [
   { keywords: ["anime", "trending"], key: "Trending anime" },
   { keywords: ["manga"], key: "Manga updates" },
@@ -53,15 +72,26 @@ const keywordMap = [
   { keywords: ["k-pop", "kpop", "k pop", "chart"], key: "K-Pop charts" },
   { keywords: ["comic"], key: "Comics spotlight" },
   { keywords: ["event", "convention", "meetup"], key: "Upcoming events" },
-  { keywords: ["merch", "store", "shop", "buy", "cart"], key: "Find merchandise" },
-  { keywords: ["bookmark", "save", "favorite"], key: "Bookmark content" },
+  {
+    keywords: ["merch", "store", "shop", "buy", "cart"],
+    key: "Find merchandise",
+  },
+  {
+    keywords: ["bookmark", "save", "favorite"],
+    key: "Bookmark content",
+  },
 ];
 
-const fallback = "I'm not sure about that yet — try asking about anime, gaming, movies, K-Pop, comics, manga, events, or merch.";
+const fallback =
+  "I'm not sure about that yet — try asking about anime, gaming, movies, K-Pop, comics, manga, events, or merch.";
 
 function findAnswerFromText(text) {
-  const t = text.toLowerCase();
-  const match = keywordMap.find((entry) => entry.keywords.some((k) => t.includes(k)));
+  const query = text.toLowerCase();
+
+  const match = keywordMap.find((entry) =>
+    entry.keywords.some((keyword) => query.includes(keyword))
+  );
+
   return match ? answers[match.key] : fallback;
 }
 
@@ -69,7 +99,7 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState("start");
   const [message, setMessage] = useState("");
-  const [query, setQuery] = useState("");
+  const [input, setInput] = useState("");
 
   function handleOption(option) {
     if (option === "Back") {
@@ -77,6 +107,7 @@ export default function Chatbot() {
       setMessage("");
       return;
     }
+
     if (flow[option]) {
       setStep(option);
       setMessage("");
@@ -85,11 +116,15 @@ export default function Chatbot() {
     }
   }
 
-  function handleSearch(e) {
-    e.preventDefault();
-    if (!query.trim()) return;
-    setMessage(findAnswerFromText(query));
-    setQuery("");
+  function send(event) {
+    event.preventDefault();
+
+    const value = input.trim();
+
+    if (!value) return;
+
+    setMessage(findAnswerFromText(value));
+    setInput("");
   }
 
   const current = flow[step];
@@ -97,46 +132,89 @@ export default function Chatbot() {
   return (
     <div className="chatbot">
       {open && (
-        <section className="chat-panel">
+        <section className="chat-panel" aria-label="FandomVerse Assistant">
           <div className="section-title">
-            <strong>FandomVerse Assistant</strong>
-            <button className="icon-btn" onClick={() => setOpen(false)}>×</button>
+            <div>
+              <span className="eyebrow">Site assistant</span>
+              <strong>FandomVerse Assistant</strong>
+            </div>
+
+            <button
+              className="icon-btn"
+              onClick={() => setOpen(false)}
+              aria-label="Close chatbot"
+              type="button"
+            >
+              <FiX />
+            </button>
           </div>
+
           <p>{current.text}</p>
-          <div className="quick-replies">
-            {current.options.map((o) => (
-              <button key={o} onClick={() => handleOption(o)}>{o}</button>
+
+          <div className="quick-replies" aria-label="Suggested questions">
+            {current.options.map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => handleOption(option)}
+              >
+                {option}
+              </button>
             ))}
           </div>
 
-          <form onSubmit={handleSearch} style={{ display: "flex", gap: 8, marginTop: 14 }}>
+          <form className="chat-input" onSubmit={send}>
             <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Or type your question..."
-              style={{
-                flex: 1,
-                padding: "8px 12px",
-                borderRadius: 8,
-                border: "1px solid rgba(255,255,255,0.2)",
-                background: "rgba(255,255,255,0.08)",
-                color: "#f7f2ff",
-                outline: "none",
-              }}
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              placeholder="Ask a question…"
+              aria-label="Ask the chatbot"
             />
-            <button type="submit" className="button ghost">Ask</button>
+
+            <button
+              className="button primary"
+              type="submit"
+              aria-label="Send question"
+            >
+              <FiSend size={14} />
+            </button>
           </form>
 
-          {message && <p style={{ marginTop: 14, color: "#f7f2ff" }}>{message}</p>}
+          {message && (
+            <p className="chat-response" role="status">
+              {message}
+            </p>
+          )}
 
-          <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
-            <Link className="button ghost" to="/fandom-match">Fandom Match</Link>
-            <Link className="button ghost" to="/fan-pulse">Fan Pulse</Link>
+          <div className="chat-links">
+            <Link
+              className="button ghost"
+              to="/fandom-match"
+              onClick={() => setOpen(false)}
+            >
+              Fandom Match
+            </Link>
+
+            <Link
+              className="button ghost"
+              to="/fan-pulse"
+              onClick={() => setOpen(false)}
+            >
+              Fan Pulse
+            </Link>
           </div>
         </section>
       )}
-      <button className="chat-toggle" aria-label="Open chatbot" onClick={() => setOpen((v) => !v)}>💬</button>
+
+      <button
+        className="chat-toggle"
+        aria-label={open ? "Close chatbot" : "Open chatbot"}
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+        type="button"
+      >
+        {open ? <FiX size={22} /> : <FiMessageCircle size={22} />}
+      </button>
     </div>
   );
 }

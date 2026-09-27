@@ -1,26 +1,57 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const STORAGE_KEY = "fandomverse-bookmarks";
+const NOTES_KEY = "fandomverse-bookmark-notes";
 const BookmarkContext = createContext(null);
 
+function readJson(storage, key, fallback) {
+  try {
+    return JSON.parse(storage.getItem(key) || JSON.stringify(fallback));
+  } catch {
+    return fallback;
+  }
+}
+
 function readBookmarks() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); }
-  catch { return []; }
+  const stored = readJson(localStorage, STORAGE_KEY, []);
+  const notes = readJson(sessionStorage, NOTES_KEY, {});
+  return stored.map((item) => ({ ...item, note: notes[item.id] || "" }));
 }
 
 export function BookmarkProvider({ children }) {
   const [bookmarks, setBookmarks] = useState(readBookmarks);
 
-  useEffect(() => localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks)), [bookmarks]);
+  useEffect(() => {
+    const withoutSessionNotes = bookmarks.map(({ note, ...item }) => item);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(withoutSessionNotes));
+
+    const notes = Object.fromEntries(
+      bookmarks.filter((item) => item.note?.trim()).map((item) => [item.id, item.note]),
+    );
+    sessionStorage.setItem(NOTES_KEY, JSON.stringify(notes));
+  }, [bookmarks]);
 
   const toggleBookmark = (item) => {
     if (!item?.id) return;
-    setBookmarks((current) => current.some((x) => x.id === item.id)
-      ? current.filter((x) => x.id !== item.id)
-      : [...current, { ...item, kind: item.kind || item.type?.toLowerCase() || "content", note: item.note || "" }]);
+
+    setBookmarks((current) => {
+      const exists = current.some((entry) => entry.id === item.id);
+      if (exists) return current.filter((entry) => entry.id !== item.id);
+      return [
+        ...current,
+        {
+          ...item,
+          kind: item.kind || item.type?.toLowerCase() || "content",
+          note: "",
+        },
+      ];
+    });
   };
 
-  const updateNote = (id, note) => setBookmarks((current) => current.map((item) => item.id === id ? { ...item, note } : item));
+  const updateNote = (id, note) => {
+    setBookmarks((current) => current.map((item) => (item.id === id ? { ...item, note } : item)));
+  };
+
   const removeBookmark = (id) => setBookmarks((current) => current.filter((item) => item.id !== id));
   const clearBookmarks = () => setBookmarks([]);
 
@@ -30,15 +61,18 @@ export function BookmarkProvider({ children }) {
     const link = document.createElement("a");
     link.href = url;
     link.download = "fandomverse-bookmarks.json";
+    document.body.appendChild(link);
     link.click();
+    link.remove();
     URL.revokeObjectURL(url);
   };
 
-  return (
-    <BookmarkContext.Provider value={{ bookmarks, toggleBookmark, updateNote, removeBookmark, clearBookmarks, exportBookmarks }}>
-      {children}
-    </BookmarkContext.Provider>
+  const value = useMemo(
+    () => ({ bookmarks, toggleBookmark, updateNote, removeBookmark, clearBookmarks, exportBookmarks }),
+    [bookmarks],
   );
+
+  return <BookmarkContext.Provider value={value}>{children}</BookmarkContext.Provider>;
 }
 
 export const useBookmarks = () => useContext(BookmarkContext);

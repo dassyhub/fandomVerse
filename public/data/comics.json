@@ -1,7 +1,83 @@
 [
-  {"id":"comics-content-1","title":"Avengers: Team-Up Visual Guide","type":"ARTICLE","category":"comics","description":"A visual guide to the heroic ensemble energy represented by the supplied Avengers artwork.","meta":"5 min read","thumbnail":"/images/comics/avengers.jpg","body":["The Avengers image celebrates the scale and teamwork that define superhero crossover stories."]},
-  {"id":"comics-content-2","title":"Spider-Man: No Way Home Official Trailer","type":"VIDEO","category":"comics","description":"The official Spider-Man: No Way Home trailer, paired with the supplied Spider-Man artwork.","meta":"Official trailer","thumbnail":"/images/comics/spiderman.jpg","youtubeUrl":"https://www.youtube.com/watch?v=ZYzbalQ6Lg8","embedUrl":"https://www.youtube.com/embed/ZYzbalQ6Lg8","sourceTitle":"SPIDER-MAN: NO WAY HOME - Official Trailer","tags":["Spider-Man","trailer"]},
-  {"id":"comics-content-3","title":"Marvel Heroes Image Gallery","type":"GALLERY","category":"comics","description":"A local gallery using the supplied Marvel, Avengers, and Spider-Man images.","meta":"3 images","thumbnail":"/images/comics/marvel.jpg","galleryImages":["/images/comics/marvel.jpg","/images/comics/avengers.jpg","/images/comics/spiderman.jpg"]},
-  {"id":"comics-content-4","title":"Spider-Man: Web-Slinger Notes","type":"ARTICLE","category":"comics","description":"A short spotlight on the Spider-Man artwork and the character's enduring comic-book visual language.","meta":"4 min read","thumbnail":"/images/comics/spiderman.jpg","body":["Spider-Man's visual identity balances a bright graphic silhouette with movement and city-scale action."]},
-  {"id":"comics-content-5","title":"Marvel Local Audio Sample","type":"AUDIO","category":"comics","description":"A FandomVerse local audio sample paired with Marvel artwork; it is not an official Marvel score.","meta":"Audio sample","thumbnail":"/images/comics/marvel.jpg","cover":"/images/comics/marvel.jpg","mediaSrc":"/media/fandomverse-audio.wav"}
+  {
+    "id": "comics-content-1",
+    "title": "Avengers: Team-Up Visual Guide",
+    "type": "ARTICLE",
+    "category": "comics",
+    "description": "A visual guide to the heroic ensemble energy represented by the supplied Avengers artwork.",
+    "meta": "5 min read",
+    "thumbnail": "/images/comics/avengers.jpg",
+    "body": [
+      "The Avengers image celebrates the scale and teamwork that define superhero crossover stories."
+    ],
+    "publishedAt": "2026-09-27",
+    "popularity": 96,
+    "featured": true
+  },
+  {
+    "id": "comics-content-2",
+    "title": "Spider-Man: No Way Home Official Trailer",
+    "type": "VIDEO",
+    "category": "comics",
+    "description": "The official Spider-Man: No Way Home trailer, paired with the supplied Spider-Man artwork.",
+    "meta": "Official trailer",
+    "thumbnail": "/images/comics/spiderman.jpg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=ZYzbalQ6Lg8",
+    "embedUrl": "https://www.youtube.com/embed/ZYzbalQ6Lg8",
+    "sourceTitle": "SPIDER-MAN: NO WAY HOME - Official Trailer",
+    "tags": [
+      "Spider-Man",
+      "trailer"
+    ],
+    "publishedAt": "2026-08-25",
+    "popularity": 89,
+    "featured": true,
+    "releaseStatus": "RECENTLY RELEASED"
+  },
+  {
+    "id": "comics-content-3",
+    "title": "Marvel Heroes Image Gallery",
+    "type": "GALLERY",
+    "category": "comics",
+    "description": "A local gallery using the supplied Marvel, Avengers, and Spider-Man images.",
+    "meta": "3 images",
+    "thumbnail": "/images/comics/marvel.jpg",
+    "galleryImages": [
+      "/images/comics/marvel.jpg",
+      "/images/comics/avengers.jpg",
+      "/images/comics/spiderman.jpg"
+    ],
+    "publishedAt": "2026-07-23",
+    "popularity": 82,
+    "featured": false
+  },
+  {
+    "id": "comics-content-4",
+    "title": "Spider-Man: Web-Slinger Notes",
+    "type": "ARTICLE",
+    "category": "comics",
+    "description": "A short spotlight on the Spider-Man artwork and the character's enduring comic-book visual language.",
+    "meta": "4 min read",
+    "thumbnail": "/images/comics/spiderman.jpg",
+    "body": [
+      "Spider-Man's visual identity balances a bright graphic silhouette with movement and city-scale action."
+    ],
+    "publishedAt": "2026-06-21",
+    "popularity": 75,
+    "featured": false
+  },
+  {
+    "id": "comics-content-5",
+    "title": "Marvel Local Audio Sample",
+    "type": "AUDIO",
+    "category": "comics",
+    "description": "A FandomVerse local audio sample paired with Marvel artwork; it is not an official Marvel score.",
+    "meta": "Audio sample",
+    "thumbnail": "/images/comics/marvel.jpg",
+    "cover": "/images/comics/marvel.jpg",
+    "mediaSrc": "/media/fandomverse-audio.wav",
+    "publishedAt": "2026-05-19",
+    "popularity": 68,
+    "featured": false
+  }
 ]

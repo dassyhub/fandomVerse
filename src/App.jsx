@@ -18,6 +18,7 @@ import Events from "./pages/events/Events";
 import EventDetail from "./pages/events/EventDetail";
 import Explore from "./pages/explore/Explore";
 import ReleaseRadar from "./pages/releases/ReleaseRadar";
+import Trailers from "./pages/releases/Trailers";
 import Store from "./pages/store/Store";
 import ProductDetail from "./pages/store/ProductDetail";
 import Cart from "./pages/store/Cart";
@@ -31,17 +32,28 @@ import Contact from "./pages/info/Contact";
 import Sitemap from "./pages/Sitemap";
 import IntroScreen from "./components/IntroScreen";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, [pathname]);
+  return null;
+}
 
 export default function App() {
-  const [intro, setIntro] = useState(() => sessionStorage.getItem("fandomverse-intro-seen") !== "1");
-  useEffect(() => { if (!intro) sessionStorage.setItem("fandomverse-intro-seen", "1"); }, [intro]);
-  if (intro) return <IntroScreen onComplete={() => { sessionStorage.setItem("fandomverse-intro-seen", "1"); setIntro(false); }} />;
+  // Always true on mount. A real browser refresh always remounts App from
+  // scratch, so this naturally replays the intro every refresh, per the SRS.
+  // Client-side route navigation (React Router Link clicks) never remounts
+  // App, so the intro correctly does NOT replay when just browsing pages.
+  const [intro, setIntro] = useState(true);
+  if (intro) return <IntroScreen onComplete={() => setIntro(false)} />;
 
   return (
     <ThemeProvider>
       <BookmarkProvider>
         <CartProvider>
           <div className="app-shell">
+      <ScrollToTop />
       <Navbar />
       <main className="site-main">
         <Routes>
@@ -58,6 +70,7 @@ export default function App() {
           <Route path="/events/:id" element={<EventDetail />} />
           <Route path="/explore" element={<Explore/>} />
           <Route path="/releases" element={<ReleaseRadar />} />
+          <Route path="/trailers" element={<Trailers />} />
           <Route path="/store" element={<Store />} />
           <Route path="/store/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />

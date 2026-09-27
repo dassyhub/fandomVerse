@@ -16,7 +16,7 @@ export default function ArticleDetail() {
     <Breadcrumbs items={[{ label: item.category, to: `/category/${item.category}` }, { label: item.title }]} />
     <article className="detail-page">
       <span className="eyebrow">Article · {item.category}</span><h1 className="break-words">{item.title}</h1><p>{item.meta || "Featured article"}</p>
-      <img src={item.thumbnail} alt="" className="detail-cover" />
+      <img src={item.thumbnail} alt={item.title} className="detail-cover" />
       <div className="detail-actions"><button className="button primary" onClick={() => toggleBookmark({ ...item, kind: "articles" })}>{saved ? "Bookmarked" : "Bookmark Article"}</button></div>
       <div className="article-body">{(item.body || [item.description]).map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div>
     </article>

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  FiBookmark,
   FiPlay,
   FiX,
   FiArrowRight,
@@ -11,44 +10,43 @@ import {
   FiBookOpen,
 } from "react-icons/fi";
 import { TbMask, TbDeviceGamepad2, TbBubbleText } from "react-icons/tb";
-import { useBookmarks } from "../context/BookmarkContext";
 
 const heroSlides = [
   {
-    id: "hero-a-battle-fought",
-    image: "/images/A%20battle%20fought.jpg",
-    imageAlt: "Battle scene from the supplied FandomVerse artwork",
-    title: "A Battle Fought",
-    category: "Art",
-    description: "A battle scene from the local image collection; its original series title is not listed in the available content data.",
-    trailerUrl: null,
-  },
-  {
-    id: "hero-demon-slayer",
-    image: "/images/Demon%20Slayer.jpg",
-    imageAlt: "Demon Slayer artwork from the supplied hero image",
-    title: "Demon Slayer",
+    id: "hero-black-clover",
+    image: "/images/anime/Black-clover.jpeg",
+    imageAlt: "Black Clover artwork",
+    title: "Black Clover: Official Main Trailer",
     category: "Anime",
-    description: "Tanjiro Kamado joins the Demon Slayer Corps and fights to protect others while searching for a way to restore his sister.",
-    trailerUrl: null,
+    description: "Asta pursues the title of Wizard King in a world where magic, rivalry, and determination drive every battle.",
+    trailerUrl: "https://www.youtube.com/watch?v=3g_T3ymRKxo",
   },
   {
-    id: "hero-featured-artwork",
-    image: "/images/res.jpg",
-    imageAlt: "Unidentified artwork from the FandomVerse image collection",
-    title: "Featured Artwork",
-    category: "Unverified",
-    description: "This image is not linked to an identified title in the available FandomVerse content data.",
-    trailerUrl: null,
+    id: "hero-gta-vi",
+    image: "/images/gaming/gtaa.jpeg",
+    imageAlt: "Grand Theft Auto VI artwork",
+    title: "Grand Theft Auto VI: Trailer 2",
+    category: "Gaming",
+    description: "Jason and Lucia are pulled deeper into Leonida's criminal underworld in Rockstar Games' second trailer.",
+    trailerUrl: "https://www.youtube.com/watch?v=VQRLujxTm3c",
   },
   {
-    id: "hero-the-100",
-    image: "/images/The%20100.jpg",
-    imageAlt: "The 100 series artwork from the supplied hero image",
-    title: "The 100",
-    category: "TV Shows",
-    description: "After a nuclear apocalypse, a group of young survivors returns to Earth to find out whether humanity can begin again.",
-    trailerUrl: null,
+    id: "hero-sinners",
+    image: "/images/movies/sinners.jpeg",
+    imageAlt: "Sinners film artwork",
+    title: "Sinners: Official Trailer",
+    category: "Movies",
+    description: "Ryan Coogler's dark homecoming story brings music, family, and a supernatural threat together.",
+    trailerUrl: "https://www.youtube.com/watch?v=1yYcsdbscxY",
+  },
+  {
+    id: "hero-spider-man",
+    image: "/images/comics/spiderman.jpg",
+    imageAlt: "Spider-Man artwork",
+    title: "Spider-Man: No Way Home",
+    category: "Comics",
+    description: "A multiverse-spanning Spider-Man trailer presented through the FandomVerse comics hub.",
+    trailerUrl: "https://www.youtube.com/watch?v=ZYzbalQ6Lg8",
   },
 ];
 
@@ -155,10 +153,8 @@ export default function Home() {
   const closeButtonRef = useRef(null);
   const previousFocusRef = useRef(null);
   const closeTimerRef = useRef(null);
-  const { bookmarks, toggleBookmark } = useBookmarks();
   const activeSlide = heroSlides[activeIndex];
   const trailerEmbedUrl = getYouTubeEmbedUrl(activeSlide.trailerUrl);
-  const isBookmarked = bookmarks.some((item) => item.id === activeSlide.id);
   const closeTrailer = () => {
     window.clearTimeout(closeTimerRef.current);
     setTrailerClosing(true);
@@ -179,7 +175,7 @@ export default function Home() {
 
     const timer = window.setTimeout(() => {
       setActiveIndex((current) => (current + 1) % heroSlides.length);
-    }, 5000);
+    }, 3000);
 
     return () => window.clearTimeout(timer);
   }, [activeIndex, trailerOpen]);
@@ -223,16 +219,24 @@ export default function Home() {
 
       <section className="fv-home-hero relative min-h-100.75 overflow-hidden bg-linear-to-r from-[#29102e] via-[#1d112d] to-[#111d35]">
         <div className="fv-hero-slides absolute inset-0" aria-label="Featured FandomVerse images">
-          {heroSlides.map((slide, index) => (
-            <img
-              key={slide.id}
-              src={slide.image}
-              alt={slide.imageAlt}
-              aria-hidden={index !== activeIndex}
-              className={`fv-hero-image absolute inset-0 h-full w-full object-cover ${index === activeIndex ? "is-active" : ""}`}
-              fetchPriority={index === 0 ? "high" : "auto"}
-            />
-          ))}
+          {heroSlides.map((slide, index) =>
+            slide.image ? (
+              <img
+                key={slide.id}
+                src={slide.image}
+                alt={slide.imageAlt}
+                aria-hidden={index !== activeIndex}
+                className={`fv-hero-image absolute inset-0 h-full w-full object-cover ${index === activeIndex ? "is-active" : ""}`}
+                fetchPriority={index === 0 ? "high" : "auto"}
+              />
+            ) : (
+              <div
+                key={slide.id}
+                aria-hidden={index !== activeIndex}
+                className={`fv-hero-image absolute inset-0 h-full w-full bg-linear-to-br ${slide.gradient} ${index === activeIndex ? "is-active" : ""}`}
+              />
+            )
+          )}
         </div>
         <div className="fv-hero-overlay absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(164,48,173,0.18),transparent_60%)]" />
@@ -266,15 +270,6 @@ export default function Home() {
                 Watch Trailer
               </button>
 
-              <button
-                type="button"
-                aria-pressed={isBookmarked}
-                onClick={() => toggleBookmark({ ...activeSlide, kind: "content" })}
-                className="flex items-center gap-2 rounded-full border border-[#39294d] px-5 py-2.5 text-xs font-semibold transition hover:bg-[#21172d]"
-              >
-                <FiBookmark size={14} />
-                {isBookmarked ? "Bookmarked" : "Bookmark"}
-              </button>
             </div>
 
             <div className="fv-hero-pagination mt-5 flex items-center gap-2" aria-label="Choose featured image">
@@ -351,7 +346,7 @@ export default function Home() {
             EXPLORE CATEGORIES
           </h2>
 
-          <div className="fv-category-grid grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+          <div className="fv-category-grid grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
             {categories.map((category) => (
               <Link
                 key={category.name}

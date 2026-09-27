@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Breadcrumbs from "../components/layout/Breadcrumbs";
 
 const groups = [
-  { title: "Explore", links: [["Home", "/"], ["Explore", "/explore"], ["Search", "/search"], ["Events", "/events"], ["Release Radar", "/releases"]] },
+  { title: "Explore", links: [["Home", "/"], ["Explore", "/explore"], ["Search", "/search"], ["Characters", "/characters"], ["Events", "/events"], ["Release Radar", "/releases"], ["Trailers", "/trailers"]] },
   { title: "Fandoms", links: [["Anime", "/category/anime"], ["Gaming", "/category/gaming"], ["Movies", "/category/movies"], ["TV Shows", "/category/tvshows"], ["K-Pop", "/category/kpop"], ["Comics", "/category/comics"], ["Manga", "/category/manga"]] },
   { title: "Community", links: [["Fandom Match", "/fandom-match"], ["Fan Pulse", "/fan-pulse"], ["Bookmarks", "/bookmarks"], ["About Us", "/about"], ["Contact Us", "/contact"]] },
   { title: "Store", links: [["Store", "/store"], ["Cart", "/cart"]] },

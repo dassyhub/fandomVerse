@@ -1,7 +1,80 @@
 [
-  {"id":"manga-content-1","title":"My Hero Academia: Heroic Visual Guide","type":"ARTICLE","category":"manga","description":"A visual guide to the superhero-school energy represented by the supplied My Hero Academia artwork.","meta":"5 min read","thumbnail":"/images/manga/MHA.jpg","body":["My Hero Academia frames heroism as both a public calling and a personal responsibility."]},
-  {"id":"manga-content-2","title":"Manga Collection Image Gallery","type":"GALLERY","category":"manga","description":"A local gallery using the supplied manga and anime-style images.","meta":"3 images","thumbnail":"/images/manga/mang1.jpg","galleryImages":["/images/manga/mang1.jpg","/images/manga/MHA.jpg","/images/manga/Anime Collection _ 4k wallpaper.jpg"]},
-  {"id":"manga-content-3","title":"My Hero Academia: Character Art Notes","type":"ARTICLE","category":"manga","description":"A short spotlight on the supplied My Hero Academia character artwork.","meta":"4 min read","thumbnail":"/images/manga/MHA.jpg","body":["Character design in My Hero Academia makes powers readable through costume, posture, and color."]},
-  {"id":"manga-content-4","title":"Manga Local Audio Sample","type":"AUDIO","category":"manga","description":"A FandomVerse local audio sample paired with manga artwork; it is not an official manga or anime soundtrack.","meta":"Audio sample","thumbnail":"/images/manga/mang1.jpg","cover":"/images/manga/mang1.jpg","mediaSrc":"/media/fandomverse-audio.wav"},
-  {"id":"manga-content-5","title":"Manga Panel Texture Gallery","type":"GALLERY","category":"manga","description":"A second local gallery of the supplied manga-style visual assets.","meta":"3 images","thumbnail":"/images/manga/Anime Collection _ 4k wallpaper.jpg","galleryImages":["/images/manga/Anime Collection _ 4k wallpaper.jpg","/images/manga/mang1.jpg","/images/manga/MHA.jpg"]}
+  {
+    "id": "manga-content-1",
+    "title": "My Hero Academia: Heroic Visual Guide",
+    "type": "ARTICLE",
+    "category": "manga",
+    "description": "A visual guide to the superhero-school energy represented by the supplied My Hero Academia artwork.",
+    "meta": "5 min read",
+    "thumbnail": "/images/manga/MHA.jpg",
+    "body": [
+      "My Hero Academia frames heroism as both a public calling and a personal responsibility."
+    ],
+    "publishedAt": "2026-09-27",
+    "popularity": 96,
+    "featured": true
+  },
+  {
+    "id": "manga-content-2",
+    "title": "Manga Collection Image Gallery",
+    "type": "GALLERY",
+    "category": "manga",
+    "description": "A local gallery using the supplied manga and anime-style images.",
+    "meta": "3 images",
+    "thumbnail": "/images/manga/mang1.jpg",
+    "galleryImages": [
+      "/images/manga/mang1.jpg",
+      "/images/manga/MHA.jpg",
+      "/images/manga/Anime Collection _ 4k wallpaper.jpg"
+    ],
+    "publishedAt": "2026-08-25",
+    "popularity": 89,
+    "featured": true
+  },
+  {
+    "id": "manga-content-3",
+    "title": "My Hero Academia: Character Art Notes",
+    "type": "ARTICLE",
+    "category": "manga",
+    "description": "A short spotlight on the supplied My Hero Academia character artwork.",
+    "meta": "4 min read",
+    "thumbnail": "/images/manga/MHA.jpg",
+    "body": [
+      "Character design in My Hero Academia makes powers readable through costume, posture, and color."
+    ],
+    "publishedAt": "2026-07-23",
+    "popularity": 82,
+    "featured": false
+  },
+  {
+    "id": "manga-content-4",
+    "title": "Manga Local Audio Sample",
+    "type": "AUDIO",
+    "category": "manga",
+    "description": "A FandomVerse local audio sample paired with manga artwork; it is not an official manga or anime soundtrack.",
+    "meta": "Audio sample",
+    "thumbnail": "/images/manga/mang1.jpg",
+    "cover": "/images/manga/mang1.jpg",
+    "mediaSrc": "/media/fandomverse-audio.wav",
+    "publishedAt": "2026-06-21",
+    "popularity": 75,
+    "featured": false
+  },
+  {
+    "id": "manga-content-5",
+    "title": "Manga Panel Texture Gallery",
+    "type": "GALLERY",
+    "category": "manga",
+    "description": "A second local gallery of the supplied manga-style visual assets.",
+    "meta": "3 images",
+    "thumbnail": "/images/manga/Anime Collection _ 4k wallpaper.jpg",
+    "galleryImages": [
+      "/images/manga/Anime Collection _ 4k wallpaper.jpg",
+      "/images/manga/mang1.jpg",
+      "/images/manga/MHA.jpg"
+    ],
+    "publishedAt": "2026-05-19",
+    "popularity": 68,
+    "featured": false
+  }
 ]

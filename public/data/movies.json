@@ -1,9 +1,130 @@
 [
-  {"id":"movies-content-1","title":"Sinners: A Dark Southern Tale","type":"ARTICLE","category":"movies","description":"Ryan Coogler's Sinners follows twin brothers returning home only to find an evil waiting for them.","meta":"6 min read","thumbnail":"/images/movies/sinners.jpeg","tags":["Sinners","Ryan Coogler"],"body":["Sinners places twin brothers at the center of a homecoming shadowed by a supernatural threat.","The film's trailer presents a Southern setting, music, and danger as inseparable parts of its mood."]},
-  {"id":"movies-content-2","title":"Sinners: Official Trailer","type":"TRAILER","category":"movies","description":"The official Sinners trailer introduces Ryan Coogler's horror story about twin brothers and the evil that awaits their return.","meta":"Official trailer","thumbnail":"/images/movies/sinners.jpeg","youtubeUrl":"https://www.youtube.com/watch?v=1yYcsdbscxY","embedUrl":"https://www.youtube.com/embed/1yYcsdbscxY","sourceTitle":"Sinners | Official Trailer","tags":["Sinners","trailer"]},
-  {"id":"movies-content-3","title":"Fight Club: Visual Retrospective","type":"ARTICLE","category":"movies","description":"A visual retrospective of Fight Club's confrontational style and its lasting place in late-1990s film culture.","meta":"5 min read","thumbnail":"/images/movies/fight-club.jpeg","body":["Fight Club remains recognizable for its abrasive visual identity and satirical edge.","This retrospective is about the supplied Fight Club artwork and the film's cultural afterlife."]},
-  {"id":"movies-content-4","title":"Marty Supreme: Official Trailer","type":"TRAILER","category":"movies","description":"A24's Marty Supreme follows an ambitious table-tennis player chasing a future nobody else believes in.","meta":"Official trailer","thumbnail":"/images/tvshows/marty.jpeg","youtubeUrl":"https://www.youtube.com/watch?v=s9gSuKaKcqM","embedUrl":"https://www.youtube.com/embed/s9gSuKaKcqM","sourceTitle":"Marty Supreme | Official Trailer HD | A24","tags":["Marty Supreme","A24","trailer"]},
-  {"id":"movies-content-5","title":"The Pursuit of Happyness: Official Trailer","type":"TRAILER","category":"movies","description":"Will Smith stars as Chris Gardner, a struggling salesman determined to build a future for his young son.","meta":"Official trailer","thumbnail":"/images/tvshows/pursuit.jpeg","youtubeUrl":"https://www.youtube.com/watch?v=_ogkBiqPONA","embedUrl":"https://www.youtube.com/embed/_ogkBiqPONA","sourceTitle":"The Pursuit Of Happyness (2006) - Trailer","tags":["The Pursuit of Happyness","trailer"]},
-  {"id":"movies-content-6","title":"Sinners Local Image Gallery","type":"GALLERY","category":"movies","description":"A small local gallery using the supplied Sinners, Marty Supreme, and The Pursuit of Happyness film artwork.","meta":"3 images","thumbnail":"/images/movies/sinners.jpeg","galleryImages":["/images/movies/sinners.jpeg","/images/tvshows/marty.jpeg","/images/tvshows/pursuit.jpeg"]},
-  {"id":"movies-content-7","title":"Sinners Local Audio Sample","type":"AUDIO","category":"movies","description":"A FandomVerse local audio sample paired with Sinners artwork; it is not an official film score.","meta":"Audio sample","thumbnail":"/images/movies/sinners.jpeg","cover":"/images/movies/sinners.jpeg","mediaSrc":"/media/fandomverse-audio.wav"}
+  {
+    "id": "movies-content-1",
+    "title": "Sinners: A Dark Southern Tale",
+    "type": "ARTICLE",
+    "category": "movies",
+    "description": "Ryan Coogler's Sinners follows twin brothers returning home only to find an evil waiting for them.",
+    "meta": "6 min read",
+    "thumbnail": "/images/movies/sinners.jpeg",
+    "tags": [
+      "Sinners",
+      "Ryan Coogler"
+    ],
+    "body": [
+      "Sinners places twin brothers at the center of a homecoming shadowed by a supernatural threat.",
+      "The film's trailer presents a Southern setting, music, and danger as inseparable parts of its mood."
+    ],
+    "publishedAt": "2026-09-27",
+    "popularity": 96,
+    "featured": true
+  },
+  {
+    "id": "movies-content-2",
+    "title": "Sinners: Official Trailer",
+    "type": "TRAILER",
+    "category": "movies",
+    "description": "The official Sinners trailer introduces Ryan Coogler's horror story about twin brothers and the evil that awaits their return.",
+    "meta": "Official trailer",
+    "thumbnail": "/images/movies/sinners.jpeg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=1yYcsdbscxY",
+    "embedUrl": "https://www.youtube.com/embed/1yYcsdbscxY",
+    "sourceTitle": "Sinners | Official Trailer",
+    "tags": [
+      "Sinners",
+      "trailer"
+    ],
+    "publishedAt": "2026-08-25",
+    "popularity": 89,
+    "featured": true,
+    "releaseStatus": "RECENTLY RELEASED"
+  },
+  {
+    "id": "movies-content-3",
+    "title": "Fight Club: Visual Retrospective",
+    "type": "ARTICLE",
+    "category": "movies",
+    "description": "A visual retrospective of Fight Club's confrontational style and its lasting place in late-1990s film culture.",
+    "meta": "5 min read",
+    "thumbnail": "/images/movies/fight-club.jpeg",
+    "body": [
+      "Fight Club remains recognizable for its abrasive visual identity and satirical edge.",
+      "This retrospective is about the supplied Fight Club artwork and the film's cultural afterlife."
+    ],
+    "publishedAt": "2026-07-23",
+    "popularity": 82,
+    "featured": false
+  },
+  {
+    "id": "movies-content-4",
+    "title": "Marty Supreme: Official Trailer",
+    "type": "TRAILER",
+    "category": "movies",
+    "description": "A24's Marty Supreme follows an ambitious table-tennis player chasing a future nobody else believes in.",
+    "meta": "Official trailer",
+    "thumbnail": "/images/tvshows/marty.jpeg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=s9gSuKaKcqM",
+    "embedUrl": "https://www.youtube.com/embed/s9gSuKaKcqM",
+    "sourceTitle": "Marty Supreme | Official Trailer HD | A24",
+    "tags": [
+      "Marty Supreme",
+      "A24",
+      "trailer"
+    ],
+    "publishedAt": "2026-06-21",
+    "popularity": 75,
+    "featured": false,
+    "releaseStatus": "RECENTLY RELEASED"
+  },
+  {
+    "id": "movies-content-5",
+    "title": "The Pursuit of Happyness: Official Trailer",
+    "type": "TRAILER",
+    "category": "movies",
+    "description": "Will Smith stars as Chris Gardner, a struggling salesman determined to build a future for his young son.",
+    "meta": "Official trailer",
+    "thumbnail": "/images/tvshows/pursuit.jpeg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=_ogkBiqPONA",
+    "embedUrl": "https://www.youtube.com/embed/_ogkBiqPONA",
+    "sourceTitle": "The Pursuit Of Happyness (2006) - Trailer",
+    "tags": [
+      "The Pursuit of Happyness",
+      "trailer"
+    ],
+    "publishedAt": "2026-05-19",
+    "popularity": 68,
+    "featured": false,
+    "releaseStatus": "RECENTLY RELEASED"
+  },
+  {
+    "id": "movies-content-6",
+    "title": "Sinners Local Image Gallery",
+    "type": "GALLERY",
+    "category": "movies",
+    "description": "A small local gallery using the supplied Sinners, Marty Supreme, and The Pursuit of Happyness film artwork.",
+    "meta": "3 images",
+    "thumbnail": "/images/movies/sinners.jpeg",
+    "galleryImages": [
+      "/images/movies/sinners.jpeg",
+      "/images/tvshows/marty.jpeg",
+      "/images/tvshows/pursuit.jpeg"
+    ],
+    "publishedAt": "2026-04-17",
+    "popularity": 61,
+    "featured": false
+  },
+  {
+    "id": "movies-content-7",
+    "title": "Sinners Local Audio Sample",
+    "type": "AUDIO",
+    "category": "movies",
+    "description": "A FandomVerse local audio sample paired with Sinners artwork; it is not an official film score.",
+    "meta": "Audio sample",
+    "thumbnail": "/images/movies/sinners.jpeg",
+    "cover": "/images/movies/sinners.jpeg",
+    "mediaSrc": "/media/fandomverse-audio.wav",
+    "publishedAt": "2026-03-15",
+    "popularity": 58,
+    "featured": false
+  }
 ]

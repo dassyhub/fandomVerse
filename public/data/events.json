@@ -11,7 +11,7 @@
     "id": "anime-event-2",
     "title": "Nightfall Reapers Fan Convention 2027",
     "category": "anime",
-    "date": "Jun 13, 2026",
+    "date": "Jun 13, 2027",
     "location": "Riverside Expo Hall",
     "description": "A gathering for fans of Nightfall Reapers, featuring panels, meetups, and exclusive reveals."
   },
@@ -19,7 +19,7 @@
     "id": "anime-event-3",
     "title": "Nightfall Reapers Fan Convention 2028",
     "category": "anime",
-    "date": "Sep 16, 2026",
+    "date": "Sep 16, 2028",
     "location": "Downtown Arena",
     "description": "A gathering for fans of Nightfall Reapers, featuring panels, meetups, and exclusive reveals."
   },
@@ -35,7 +35,7 @@
     "id": "gaming-event-2",
     "title": "Starforge Online Fan Convention 2027",
     "category": "gaming",
-    "date": "Jun 13, 2026",
+    "date": "Jun 13, 2027",
     "location": "Downtown Arena",
     "description": "A gathering for fans of Starforge Online, featuring panels, meetups, and exclusive reveals."
   },
@@ -43,7 +43,7 @@
     "id": "gaming-event-3",
     "title": "Starforge Online Fan Convention 2028",
     "category": "gaming",
-    "date": "Sep 16, 2026",
+    "date": "Sep 16, 2028",
     "location": "Skyline Pavilion",
     "description": "A gathering for fans of Starforge Online, featuring panels, meetups, and exclusive reveals."
   },
@@ -59,7 +59,7 @@
     "id": "movies-event-2",
     "title": "The Last Horizon Fan Convention 2027",
     "category": "movies",
-    "date": "Jun 13, 2026",
+    "date": "Jun 13, 2027",
     "location": "Skyline Pavilion",
     "description": "A gathering for fans of The Last Horizon, featuring panels, meetups, and exclusive reveals."
   },
@@ -67,7 +67,7 @@
     "id": "movies-event-3",
     "title": "The Last Horizon Fan Convention 2028",
     "category": "movies",
-    "date": "Sep 16, 2026",
+    "date": "Sep 16, 2028",
     "location": "The Grand Hall",
     "description": "A gathering for fans of The Last Horizon, featuring panels, meetups, and exclusive reveals."
   },
@@ -83,7 +83,7 @@
     "id": "tvshows-event-2",
     "title": "Static City Fan Convention 2027",
     "category": "tvshows",
-    "date": "Jun 13, 2026",
+    "date": "Jun 13, 2027",
     "location": "The Grand Hall",
     "description": "A gathering for fans of Static City, featuring panels, meetups, and exclusive reveals."
   },
@@ -91,7 +91,7 @@
     "id": "tvshows-event-3",
     "title": "Static City Fan Convention 2028",
     "category": "tvshows",
-    "date": "Sep 16, 2026",
+    "date": "Sep 16, 2028",
     "location": "Northgate Stadium",
     "description": "A gathering for fans of Static City, featuring panels, meetups, and exclusive reveals."
   },
@@ -107,7 +107,7 @@
     "id": "kpop-event-2",
     "title": "LUNARIS Fan Convention 2027",
     "category": "kpop",
-    "date": "Jun 13, 2026",
+    "date": "Jun 13, 2027",
     "location": "Northgate Stadium",
     "description": "A gathering for fans of LUNARIS, featuring panels, meetups, and exclusive reveals."
   },
@@ -115,7 +115,7 @@
     "id": "kpop-event-3",
     "title": "LUNARIS Fan Convention 2028",
     "category": "kpop",
-    "date": "Sep 16, 2026",
+    "date": "Sep 16, 2028",
     "location": "Lagos Convention Center",
     "description": "A gathering for fans of LUNARIS, featuring panels, meetups, and exclusive reveals."
   },
@@ -131,7 +131,7 @@
     "id": "comics-event-2",
     "title": "Ironclad Legion Fan Convention 2027",
     "category": "comics",
-    "date": "Jun 13, 2026",
+    "date": "Jun 13, 2027",
     "location": "Lagos Convention Center",
     "description": "A gathering for fans of Ironclad Legion, featuring panels, meetups, and exclusive reveals."
   },
@@ -139,7 +139,7 @@
     "id": "comics-event-3",
     "title": "Ironclad Legion Fan Convention 2028",
     "category": "comics",
-    "date": "Sep 16, 2026",
+    "date": "Sep 16, 2028",
     "location": "Riverside Expo Hall",
     "description": "A gathering for fans of Ironclad Legion, featuring panels, meetups, and exclusive reveals."
   },
@@ -155,7 +155,7 @@
     "id": "manga-event-2",
     "title": "Ashen Blade Fan Convention 2027",
     "category": "manga",
-    "date": "Jun 13, 2026",
+    "date": "Jun 13, 2027",
     "location": "Riverside Expo Hall",
     "description": "A gathering for fans of Ashen Blade, featuring panels, meetups, and exclusive reveals."
   },
@@ -163,7 +163,7 @@
     "id": "manga-event-3",
     "title": "Ashen Blade Fan Convention 2028",
     "category": "manga",
-    "date": "Sep 16, 2026",
+    "date": "Sep 16, 2028",
     "location": "Downtown Arena",
     "description": "A gathering for fans of Ashen Blade, featuring panels, meetups, and exclusive reveals."
   }

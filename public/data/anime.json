@@ -1,7 +1,96 @@
 [
-  {"id":"anime-content-1","title":"Attack on Titan: A Final-Season Reading Guide","type":"ARTICLE","category":"anime","description":"A guide to the conflict, sacrifices, and world-changing stakes that define Attack on Titan's final story.","meta":"6 min read","thumbnail":"/images/anime/AOT.jpeg","tags":["Attack on Titan","guide"],"body":["Attack on Titan follows a society living behind enormous walls while the threat of the Titans shapes every decision.","This reading guide focuses on the final season's escalating conflict and the questions it raises about freedom, loyalty, and survival."]},
-  {"id":"anime-content-2","title":"Black Clover: Official Main Trailer","type":"VIDEO","category":"anime","description":"Asta pursues the title of Wizard King in Black Clover, where magic, rivalry, and determination drive every battle.","meta":"Trailer","thumbnail":"/images/anime/Black-clover.jpeg","youtubeUrl":"https://www.youtube.com/watch?v=3g_T3ymRKxo","embedUrl":"https://www.youtube.com/embed/3g_T3ymRKxo","sourceTitle":"BLACK CLOVER Season 2 — Official Main Trailer","tags":["Black Clover","trailer"]},
-  {"id":"anime-content-3","title":"Blue Lock: Striker Spotlight","type":"ARTICLE","category":"anime","description":"Blue Lock turns Japan's search for an elite striker into a ruthless competition built on ego, instinct, and goals.","meta":"5 min read","thumbnail":"/images/anime/blue-lock.jpeg","tags":["Blue Lock","football"],"body":["Blue Lock gathers ambitious forwards in a high-pressure training program designed to create one unmatched striker.","Its tension comes from players balancing collaboration with the individual hunger to score."]},
-  {"id":"anime-content-4","title":"Jujutsu Kaisen Visual Gallery","type":"GALLERY","category":"anime","description":"A locally sourced visual gallery celebrating the supernatural action and striking character art of Jujutsu Kaisen.","meta":"2 images","thumbnail":"/images/anime/jjk.jpeg","galleryImages":["/images/anime/jjk.jpeg","/images/anime/AOT.jpeg"]},
-  {"id":"anime-content-5","title":"Sakamoto Days: Local Audio Sample","type":"AUDIO","category":"anime","description":"A FandomVerse local audio sample paired with Sakamoto Days artwork; it is not presented as an official soundtrack.","meta":"Audio sample","thumbnail":"/images/anime/sakamoto-days.jpeg","cover":"/images/anime/sakamoto-days.jpeg","mediaSrc":"/media/fandomverse-audio.wav","tags":["Sakamoto Days","audio sample"]}
+  {
+    "id": "anime-content-1",
+    "title": "Attack on Titan: A Final-Season Reading Guide",
+    "type": "ARTICLE",
+    "category": "anime",
+    "description": "A guide to the conflict, sacrifices, and world-changing stakes that define Attack on Titan's final story.",
+    "meta": "6 min read",
+    "thumbnail": "/images/anime/AOT.jpeg",
+    "tags": [
+      "Attack on Titan",
+      "guide"
+    ],
+    "body": [
+      "Attack on Titan follows a society living behind enormous walls while the threat of the Titans shapes every decision.",
+      "This reading guide focuses on the final season's escalating conflict and the questions it raises about freedom, loyalty, and survival."
+    ],
+    "publishedAt": "2026-09-27",
+    "popularity": 96,
+    "featured": true
+  },
+  {
+    "id": "anime-content-2",
+    "title": "Black Clover: Official Main Trailer",
+    "type": "VIDEO",
+    "category": "anime",
+    "description": "Asta pursues the title of Wizard King in Black Clover, where magic, rivalry, and determination drive every battle.",
+    "meta": "Trailer",
+    "thumbnail": "/images/anime/Black-clover.jpeg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=3g_T3ymRKxo",
+    "embedUrl": "https://www.youtube.com/embed/3g_T3ymRKxo",
+    "sourceTitle": "BLACK CLOVER Season 2 — Official Main Trailer",
+    "tags": [
+      "Black Clover",
+      "trailer"
+    ],
+    "publishedAt": "2026-08-25",
+    "popularity": 89,
+    "featured": true,
+    "releaseStatus": "RECENTLY RELEASED"
+  },
+  {
+    "id": "anime-content-3",
+    "title": "Blue Lock: Striker Spotlight",
+    "type": "ARTICLE",
+    "category": "anime",
+    "description": "Blue Lock turns Japan's search for an elite striker into a ruthless competition built on ego, instinct, and goals.",
+    "meta": "5 min read",
+    "thumbnail": "/images/anime/blue-lock.jpeg",
+    "tags": [
+      "Blue Lock",
+      "football"
+    ],
+    "body": [
+      "Blue Lock gathers ambitious forwards in a high-pressure training program designed to create one unmatched striker.",
+      "Its tension comes from players balancing collaboration with the individual hunger to score."
+    ],
+    "publishedAt": "2026-07-23",
+    "popularity": 82,
+    "featured": false
+  },
+  {
+    "id": "anime-content-4",
+    "title": "Jujutsu Kaisen Visual Gallery",
+    "type": "GALLERY",
+    "category": "anime",
+    "description": "A locally sourced visual gallery celebrating the supernatural action and striking character art of Jujutsu Kaisen.",
+    "meta": "2 images",
+    "thumbnail": "/images/anime/jjk.jpeg",
+    "galleryImages": [
+      "/images/anime/jjk.jpeg",
+      "/images/anime/AOT.jpeg"
+    ],
+    "publishedAt": "2026-06-21",
+    "popularity": 75,
+    "featured": false
+  },
+  {
+    "id": "anime-content-5",
+    "title": "Sakamoto Days: Local Audio Sample",
+    "type": "AUDIO",
+    "category": "anime",
+    "description": "A FandomVerse local audio sample paired with Sakamoto Days artwork; it is not presented as an official soundtrack.",
+    "meta": "Audio sample",
+    "thumbnail": "/images/anime/sakamoto-days.jpeg",
+    "cover": "/images/anime/sakamoto-days.jpeg",
+    "mediaSrc": "/media/fandomverse-audio.wav",
+    "tags": [
+      "Sakamoto Days",
+      "audio sample"
+    ],
+    "publishedAt": "2026-05-19",
+    "popularity": 68,
+    "featured": false
+  }
 ]
