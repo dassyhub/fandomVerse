@@ -381,7 +381,7 @@ p { color: var(--muted); line-height: 1.65; }
 .error-message { color: #e65378 !important; }
 .map-placeholder { margin-top: 18px; min-height: 190px; }
 .bookmark-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.bookmark-thumb { min-height: 130px; display: grid; place-items: center; background: linear-gradient(135deg,#3c227d,#8f2e77); color: #bffaff; font-size: .65rem; font-weight: 900; letter-spacing: .12em; }
+.bookmark-thumb { min-height: 180px; display: grid; overflow: hidden; place-items: center; background: linear-gradient(135deg,#3c227d,#8f2e77); color: #bffaff; font-size: .65rem; font-weight: 900; letter-spacing: .12em; }
 .bookmark-card textarea { width: 100%; margin-top: 12px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 9px; resize: vertical; }
 .gallery-main { min-height: 430px; margin-top: 20px; }
 .gallery-thumbs { display: flex; gap: 8px; overflow-x: auto; margin-top: 12px; padding-bottom: 6px; }
@@ -512,19 +512,31 @@ html[data-theme="light"] .intro-screen { background: #08060e; }
     flex: 0 0 auto;
   }
 
-  /* Hide ALL individual desktop action buttons on mobile */
-  .fv-nav-actions > .fv-action-button,
-  .fv-nav-actions > .fv-account {
-    display: none;
-  }
+ /* Hide bookmark and account on mobile */
+.fv-nav-actions > .fv-action-button:not(.fv-cart-action),
+.fv-nav-actions > .fv-account {
+  display: none;
+}
 
-  /* Keep ONLY the hamburger/menu button */
-  .fv-nav-actions > .fv-menu-button {
-    display: grid;
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-  }
+/* Keep cart + hamburger visible */
+.fv-nav-actions > .fv-cart-action,
+.fv-nav-actions > .fv-menu-button {
+  display: grid;
+  place-items: center;
+}
+
+.fv-nav-actions > .fv-cart-action {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+}
+
+.fv-nav-actions > .fv-menu-button {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+}
 }
 
 @media (max-width: 480px) {
