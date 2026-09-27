@@ -28,8 +28,15 @@ import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import About from "./pages/info/About";
 import Contact from "./pages/info/Contact";
+import Sitemap from "./pages/Sitemap";
+import IntroScreen from "./components/IntroScreen";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [intro, setIntro] = useState(() => sessionStorage.getItem("fandomverse-intro-seen") !== "1");
+  useEffect(() => { if (!intro) sessionStorage.setItem("fandomverse-intro-seen", "1"); }, [intro]);
+  if (intro) return <IntroScreen onComplete={() => { sessionStorage.setItem("fandomverse-intro-seen", "1"); setIntro(false); }} />;
+
   return (
     <ThemeProvider>
       <BookmarkProvider>
@@ -61,6 +68,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </main>
       <Chatbot />

@@ -1,42 +1,7 @@
 [
-  {
-    "id": "kpop-content-1",
-    "title": "The Rise of LUNARIS: A Global Phenomenon",
-    "type": "ARTICLE",
-    "category": "kpop",
-    "description": "How LUNARIS became one of the most talked-about fandoms this year.",
-    "meta": "6 min read"
-  },
-  {
-    "id": "kpop-content-2",
-    "title": "LUNARIS: Behind the Scenes",
-    "type": "VIDEO",
-    "category": "kpop",
-    "description": "An inside look at how the world of LUNARIS was built.",
-    "meta": "8:24"
-  },
-  {
-    "id": "kpop-content-3",
-    "title": "LUNARIS \u2014 Official Trailer",
-    "type": "TRAILER",
-    "category": "kpop",
-    "description": "The latest teaser for the next chapter of LUNARIS.",
-    "meta": "Upcoming"
-  },
-  {
-    "id": "kpop-content-4",
-    "title": "LUNARIS Fan Art Gallery",
-    "type": "GALLERY",
-    "category": "kpop",
-    "description": "A curated collection of fan-made art inspired by LUNARIS.",
-    "meta": "48 photos"
-  },
-  {
-    "id": "kpop-content-5",
-    "title": "LUNARIS: The Soundtrack Breakdown",
-    "type": "AUDIO",
-    "category": "kpop",
-    "description": "A fan podcast digging into the music of LUNARIS.",
-    "meta": "34 min"
-  }
+  {"id":"kpop-content-1","title":"K-Pop Performance Stylebook","type":"ARTICLE","category":"kpop","description":"A stylebook focused on the color, staging, and fashion energy shown in the supplied K-pop performance imagery.","meta":"5 min read","thumbnail":"/images/k-pop/k-pop1.jpg","body":["K-pop performance visuals bring styling, choreography, and lighting into one immediate identity.","This article discusses the supplied performance artwork without assigning it to an unverified artist."]},
+  {"id":"kpop-content-2","title":"K-Pop Stage Image Gallery","type":"GALLERY","category":"kpop","description":"A local gallery of the supplied K-pop performance imagery.","meta":"3 images","thumbnail":"/images/k-pop/k-pop2.jpg","galleryImages":["/images/k-pop/k-pop1.jpg","/images/k-pop/k-pop2.jpg","/images/k-pop/k-pop3.jpg"]},
+  {"id":"kpop-content-3","title":"K-Pop Visual Comeback Notes","type":"ARTICLE","category":"kpop","description":"Notes on comeback-era visual language, focused on the supplied K-pop image set.","meta":"4 min read","thumbnail":"/images/k-pop/k-pop3.jpg","body":["A comeback visual identity is built through color, silhouette, and a clear performance point of view."]},
+  {"id":"kpop-content-4","title":"K-Pop Local Audio Sample","type":"AUDIO","category":"kpop","description":"A FandomVerse local audio sample paired with K-pop artwork; it is not represented as a track by a named artist.","meta":"Audio sample","thumbnail":"/images/k-pop/k-pop1.jpg","cover":"/images/k-pop/k-pop1.jpg","mediaSrc":"/media/fandomverse-audio.wav"},
+  {"id":"kpop-content-5","title":"K-Pop Fan Styling Gallery","type":"GALLERY","category":"kpop","description":"A second local gallery for the supplied K-pop fashion and performance visual set.","meta":"3 images","thumbnail":"/images/k-pop/k-pop3.jpg","galleryImages":["/images/k-pop/k-pop3.jpg","/images/k-pop/k-pop2.jpg","/images/k-pop/k-pop1.jpg"]}
 ]

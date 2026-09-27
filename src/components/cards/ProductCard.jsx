@@ -9,6 +9,7 @@ export default function ProductCard({ product = {} }) {
         to={`/store/${product.id || "demo"}`}
         className="relative flex aspect-square items-center justify-center overflow-hidden bg-gradient-to-br from-violet-700/60 to-fuchsia-900/60"
       >
+        {product.image && <img src={product.image} alt={product.name || ""} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />}
         <span className="absolute left-3 top-3 rounded-md bg-black/50 px-2 py-1 text-[9px] font-extrabold tracking-wider text-violet-300 backdrop-blur-sm">
           MERCH
         </span>

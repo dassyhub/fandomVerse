@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#100a18"/><stop offset=".55" stop-color="#ff3e9e" stop-opacity=".72"/><stop offset="1" stop-color="#151f4d"/></linearGradient><radialGradient id="r"><stop stop-color="white" stop-opacity=".18"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="750" fill="url(#g)"/><circle cx="900" cy="140" r="260" fill="url(#r)"/><circle cx="180" cy="650" r="220" fill="url(#r)"/>
+<path d="M0 590 C260 480 380 690 650 560 S980 420 1200 540 V750 H0Z" fill="#08060e" fill-opacity=".42"/>
+<text x="70" y="120" fill="white" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="6">FANDOMVERSE ORIGINAL</text>
+<text x="70" y="590" fill="white" font-family="Arial,sans-serif" font-size="72" font-weight="900">Nightfall Reapers</text>
+<text x="74" y="635" fill="white" fill-opacity=".72" font-family="Arial,sans-serif" font-size="24">Stories • Media • Community</text></svg>
